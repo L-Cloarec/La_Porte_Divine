@@ -1,0 +1,962 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche de personnage D&D</title>
+    <link rel="stylesheet" href="style_feuille_de_personnage_v1.css">
+    
+</head>
+
+
+<body>
+    <main class="page-a4">
+
+        <!-- Première zone : identité et portrait -->
+        <section class="zone-identite">
+
+            <!-- Informations du personnage -->
+            <div class="identite-personnage">
+                <input
+                    type="text"
+                    id="nom"
+                    class="champ-nom"
+                    placeholder="Nom du personnage"
+                >
+                <input
+                    type="text"
+                    id="espece"
+                    class="champ-identite"
+                    placeholder="Espèce"
+                >
+                <input
+                    type="text"
+                    id="archetype"
+                    class="champ-identite"
+                    placeholder="Archétype"
+                >
+            </div>
+
+            <!-- Cadre du portrait -->
+            <label class="cadre-portrait" for="fichier-portrait">
+                <img id="image-portrait" alt="Portrait du personnage">
+                <span id="indication-portrait">
+                    Cliquer pour choisir une image
+                </span>
+                <input
+                    type="file"
+                    id="fichier-portrait"
+                    accept="image/*"
+                >
+            </label>
+
+        <!-- Niveau, inspiration et classe d'armure -->
+            <div class="statistiques-personnage">
+                <!-- Niveau et inspiration héroïque -->
+                <div class="bloc-niveau">
+                    <label for="niveau">NIVEAU</label>
+                    <input
+                        type="number"
+                        id="niveau"
+                        class="valeur-statistique"
+                        min="1"
+                        max="20"
+                        value="1"
+                    >
+                    <label class="inspiration">
+                        <input
+                            type="checkbox"
+                            id="inspiration-heroique"
+                        >
+                        <span>Inspiration héroïque</span>
+                    </label>
+                </div>
+                <!-- Classe d'armure -->
+                <div class="bloc-ca">
+                    <label for="classe-armure">CLASSE D'ARMURE</label>
+                    <input
+                        type="number"
+                        id="classe-armure"
+                        class="valeur-statistique"
+                        min="0"
+                        value="10"
+                    >
+                </div>
+            </div>
+
+
+        <!-- Points de vie, dés de vie et jets contre la mort -->
+        <div class="bloc-survie">
+
+            <!-- Points de vie -->
+            <div class="groupe-survie">
+
+                <h3>POINTS DE VIE</h3>
+
+                <div class="points-vie">
+
+                    <!-- Première colonne : actuels -->
+                    <div class="champ-survie">
+                        <input type="number" id="pv-actuels" min="0" value="10">
+                        <label for="pv-actuels">ACTUELS</label>
+                    </div>
+
+                    <!-- Deuxième colonne : temporaires et maximum -->
+                    <div class="champ-survie">
+                        <input type="number" id="pv-temporaires" min="0" value="0">
+                        <label for="pv-temporaires">TEMP.</label>
+
+                        <input type="number" id="pv-max" min="1" value="10">
+                        <label for="pv-max">MAX.</label>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Dés de vie -->
+            <div class="groupe-survie">
+
+                <h3>DES DE VIE</h3>
+
+                <div class="des-vie">
+
+                    <div class="champ-survie">
+                        <input type="number" id="des-actuels" min="0" value="1">
+                        <label for="des-actuels">ACTUELS</label>
+                    </div>
+
+                    <div class="champ-survie">
+                        <input type="number" id="des-max" min="0" value="1">
+                        <label for="des-max">MAX.</label>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Jets contre la mort -->
+            <div class="groupe-survie">
+                <h3>JETS CONTRE<br>LA MORT</h3>
+
+                <div class="jets-mort">
+                    <div class="ligne-jets">
+                        <div class="groupe-jets">
+                            <input type="checkbox" id="succes-1">
+                            <input type="checkbox" id="succes-2">
+                            <input type="checkbox" id="succes-3">
+                            <label for="succes-1">Succès</label>
+                        </div>
+
+                        <div class="groupe-jets">
+                            <input type="checkbox" id="echec-1">
+                            <input type="checkbox" id="echec-2">
+                            <input type="checkbox" id="echec-3">
+                            <label for="echec-1">Échecs</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        </section>
+
+        <!-- Section : Caractéristiques de combat -->
+        <!-- Section : Caractéristiques de combat -->
+        <section class="section-combat">
+
+            <div class="combat-global">
+
+                <!-- Moitié gauche : les deux bonus -->
+                <div class="combat-contenu">
+
+                    <div class="bonus-contenu">
+
+                        <!-- Bonus de combat -->
+                        <div class="combat-bloc">
+                            <h3>BONUS DE COMBAT</h3>
+
+                            <div class="bonus-ligne">
+
+                                <div class="caracteristiques">
+                                    <label class="case-carac">
+                                        <input type="checkbox" id="combat-for">
+                                        <span>FOR</span>
+                                    </label>
+
+                                    <label class="case-carac">
+                                        <input type="checkbox" id="combat-dex">
+                                        <span>DEX</span>
+                                    </label>
+                                </div>
+
+                                <div class="valeur-bonus">
+                                    <span>+</span>
+                                    <input type="number" id="bonus-combat" value="0">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Bonus d'incantation -->
+                        <div class="combat-bloc">
+                            <h3>BONUS D'INCANTATION</h3>
+
+                            <div class="bonus-ligne">
+
+                                <div class="caracteristiques">
+                                    <label class="case-carac">
+                                        <input type="checkbox" id="incantation-int">
+                                        <span>INT</span>
+                                    </label>
+
+                                    <label class="case-carac">
+                                        <input type="checkbox" id="incantation-sag">
+                                        <span>SAG</span>
+                                    </label>
+
+                                    <label class="case-carac">
+                                        <input type="checkbox" id="incantation-cha">
+                                        <span>CHA</span>
+                                    </label>
+                                </div>
+
+                                <div class="valeur-bonus">
+                                    <span>+</span>
+                                    <input type="number" id="bonus-incantation" value="0">
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Quart central : réserve de mana -->
+                <div class="combat-bloc reserve-mana">
+
+                    <h3>RESERVE DE MANA</h3>
+
+                    <div class="mana-valeurs">
+
+                        <div class="champ-survie">
+                            <input type="number" id="mana-actuel" min="0" value="10">
+                            <label for="mana-actuel">ACTUELS</label>
+                        </div>
+
+                        <div class="champ-survie">
+                            <input type="number" id="mana-max" min="0" value="10">
+                            <label for="mana-max">MAX.</label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Quart droit : caractéristiques complémentaires -->
+                <div class="combat-informations">
+
+                    <!-- Colonne de gauche -->
+                    <div class="infos-combat-colonne">
+
+                        <div class="info-combat">
+                            <label for="initiative">INITIATIVE</label>
+                            <input type="number" id="initiative" value="0">
+                        </div>
+
+                        <div class="info-combat">
+                            <label for="vitesse">VITESSE</label>
+                            <input type="number" id="vitesse" min="0" value="9">
+                        </div>
+
+                    </div>
+
+                    <!-- Colonne de droite -->
+                    <div class="infos-combat-colonne">
+
+                        <div class="info-combat">
+                            <label for="perception-passive">
+                                PERCEPTION PASSIVE
+                            </label>
+                            <input type="number" id="perception-passive" min="0" value="10">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Section : Caractéristiques et compétences -->
+        <!-- Section : Caractéristiques et compétences -->
+        <section class="section-caracteristiques">
+
+            <div class="grille-caracteristiques">
+
+                <!-- ==================== CONSTITUTION ==================== -->
+                <div class="caracteristique">
+
+                    <h3>CONSTITUTION</h3>
+
+                    <div class="valeurs-caracteristique">
+                        <div>
+                            <label for="constitution-valeur">Valeur</label>
+                            <input type="number" id="constitution-valeur" value="10">
+                        </div>
+                        <div>
+                            <label for="constitution-modificateur">Modificateur</label>
+                            <input type="number" id="constitution-modificateur" value="0">
+                        </div>
+                    </div>
+
+                    <div class="sauvegarde">
+                        <strong>Sauvegarde</strong>
+                        <label><input type="checkbox"> M</label>
+                        <label><input type="checkbox"> E</label>
+                    </div>
+
+                </div>
+
+                <!-- ==================== INTELLIGENCE ==================== -->
+                <div class="caracteristique">
+
+                    <h3>INTELLIGENCE</h3>
+
+                    <div class="valeurs-caracteristique">
+                        <div>
+                            <label for="intelligence-valeur">Valeur</label>
+                            <input type="number" id="intelligence-valeur" value="10">
+                        </div>
+                        <div>
+                            <label for="intelligence-modificateur">Modificateur</label>
+                            <input type="number" id="intelligence-modificateur" value="0">
+                        </div>
+                    </div>
+
+                    <div class="sauvegarde">
+                        <strong>Sauvegarde</strong>
+                        <label><input type="checkbox"> M</label>
+                        <label><input type="checkbox"> E</label>
+                    </div>
+
+                    <div class="competences">
+                        <div class="competence">
+                            <span>Arcanes</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                        <div class="competence">
+                            <span>Histoire</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                        <div class="competence">
+                            <span>Investigation</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                        <div class="competence">
+                            <span>Nature</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                        <div class="competence">
+                            <span>Religion</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ==================== FORCE ==================== -->
+                <div class="caracteristique">
+
+                    <h3>FORCE</h3>
+
+                    <div class="valeurs-caracteristique">
+                        <div>
+                            <label for="force-valeur">Valeur</label>
+                            <input type="number" id="force-valeur" value="10">
+                        </div>
+                        <div>
+                            <label for="force-modificateur">Modificateur</label>
+                            <input type="number" id="force-modificateur" value="0">
+                        </div>
+                    </div>
+
+                    <div class="sauvegarde">
+                        <strong>Sauvegarde</strong>
+                        <label><input type="checkbox"> M</label>
+                        <label><input type="checkbox"> E</label>
+                    </div>
+
+                    <div class="competences">
+                        <div class="competence">
+                            <span>Athlétisme</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                    </div>
+
+                </div>                
+
+                <!-- ==================== SAGESSE ==================== -->
+                <div class="caracteristique">
+
+                    <h3>SAGESSE</h3>
+
+                    <div class="valeurs-caracteristique">
+                        <div>
+                            <label for="sagesse-valeur">Valeur</label>
+                            <input type="number" id="sagesse-valeur" value="10">
+                        </div>
+                        <div>
+                            <label for="sagesse-modificateur">Modificateur</label>
+                            <input type="number" id="sagesse-modificateur" value="0">
+                        </div>
+                    </div>
+
+                    <div class="sauvegarde">
+                        <strong>Sauvegarde</strong>
+                        <label><input type="checkbox"> M</label>
+                        <label><input type="checkbox"> E</label>
+                    </div>
+
+                    <div class="competences">
+                        <div class="competence">
+                            <span dressage>Dressage</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                        <div class="competence">
+                            <span>Intuition</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                        <div class="competence">
+                            <span>Médecine</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                        <div class="competence">
+                            <span>Perception</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                        <div class="competence">
+                            <span>Survie</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ==================== DEXTÉRITÉ ==================== -->
+                <div class="caracteristique">
+
+                    <h3>DEXTÉRITÉ</h3>
+
+                    <div class="valeurs-caracteristique">
+                        <div>
+                            <label for="dexterite-valeur">Valeur</label>
+                            <input type="number" id="dexterite-valeur" value="10">
+                        </div>
+                        <div>
+                            <label for="dexterite-modificateur">Modificateur</label>
+                            <input type="number" id="dexterite-modificateur" value="0">
+                        </div>
+                    </div>
+
+                    <div class="sauvegarde">
+                        <strong>Sauvegarde</strong>
+                        <label><input type="checkbox"> M</label>
+                        <label><input type="checkbox"> E</label>
+                    </div>
+
+                    <div class="competences">
+                        <div class="competence">
+                            <span>Acrobaties</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                        <div class="competence">
+                            <span>Discrétion</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                        <div class="competence">
+                            <span>Sabotage</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                        <div class="competence">
+                            <span>Escamotage</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ==================== CHARISME ==================== -->
+                <div class="caracteristique">
+
+                    <h3>CHARISME</h3>
+
+                    <div class="valeurs-caracteristique">
+                        <div>
+                            <label for="charisme-valeur">Valeur</label>
+                            <input type="number" id="charisme-valeur" value="10">
+                        </div>
+                        <div>
+                            <label for="charisme-modificateur">Modificateur</label>
+                            <input type="number" id="charisme-modificateur" value="0">
+                        </div>
+                    </div>
+
+                    <div class="sauvegarde">
+                        <strong>Sauvegarde</strong>
+                        <label><input type="checkbox"> M</label>
+                        <label><input type="checkbox"> E</label>
+                    </div>
+
+                    <div class="competences">
+                        <div class="competence">
+                            <span>Intimidation</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                        <div class="competence">
+                            <span>Persuasion</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                        <div class="competence">
+                            <span>Représentation</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                        <div class="competence">
+                            <span>Tromperie</span>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> E</label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>        
+
+
+        <!-- Section : Techniques -->
+
+        <!-- Section : Techniques -->
+        <section class="section-techniques">
+
+            <!-- Conteneur défilant : seule la table défile -->
+            <div class="conteneur-techniques">
+                <table class="table-techniques">
+                    <colgroup>
+                        <col class="col-technique">
+                        <col class="col-cout">
+                        <col class="col-portee">
+                        <col class="col-duree">
+                        <col class="col-bonus">
+                        <col class="col-effets">
+                        <col class="col-type">
+                        <col class="col-statut">
+                        <col class="col-action">
+                    </colgroup>
+
+                    <thead>
+                        <tr>
+                            <th>Techniques</th>
+                            <th>Coût</th>
+                            <th>Portée</th>
+                            <th>Durée</th>
+                            <th>Bonus</th>
+                            <th>Effets</th>
+                            <th>Type</th>
+                            <th>Statut</th>
+                            <th>-</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="liste-techniques">
+                        <!-- Les lignes seront ajoutées par JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Bouton en dehors de la zone défilante -->
+            <button type="button" id="ajouter-technique">
+                + Ajouter une technique
+            </button>
+
+            <!-- Modèle utilisé par JavaScript -->
+            <template id="modele-technique">
+                <tr>
+                    <td><input type="text" placeholder="Nom"></td>
+                    <td>
+                        <select>
+                            <option value="">Choisir...</option>
+                            <option>Action</option>
+                            <option>Action bonus</option>
+                            <option>Réaction</option>
+                            <option>-</option>
+                        </select>
+                    </td>
+                    <td><input type="text" placeholder="Portée"></td>
+                    <td><input type="text" placeholder="Durée"></td>
+                    <td><input type="text" placeholder="Bonus"></td>
+                    <td><input type="text" placeholder="Effets"></td>
+                    <td>
+                        <select>
+                            <option value="">Choisir...</option>
+                            <option>Tranchant</option>
+                            <option>Contondant</option>
+                            <option>Perforant</option>
+                            <option>Radiant</option>
+                            <option>Nécrotique</option>
+                            <option>Froid</option>
+                            <option>Feu</option>
+                            <option>Foudre</option>
+                            <option>Tonnerre</option>
+                            <option>Poison</option>
+                            <option>Acide</option>
+                            <option>Force</option>
+                            <option>Psychique</option>
+                            <option>Soins</option>
+                            <option>-</option>
+                        </select>
+                    </td>
+                    <td><input type="text" placeholder="Statut"></td>
+                    <td>
+                        <button type="button" class="supprimer-technique">✕</button>
+                    </td>
+                </tr>
+            </template>
+
+        </section>
+
+
+        <!-- Section : Sorts -->
+        <!-- Section : Sorts -->
+        <section class="section-sorts">
+            <!-- Zone de défilement -->
+            <div class="conteneur-sorts">
+                <table class="table-sorts">
+
+                    <colgroup>
+                        <col class="col-sort">
+                        <col class="col-cout-sort">
+                        <col class="col-mana">
+                        <col class="col-portee-sort">
+                        <col class="col-duree-sort">
+                        <col class="col-bonus-sort">
+                        <col class="col-des-effets">
+                        <col class="col-type-sort">
+                        <col class="col-jet-statut">
+                        <col class="col-action-sort">
+                    </colgroup>
+
+                    <thead>
+                        <tr>
+                            <th>Sorts</th>
+                            <th>Coût</th>
+                            <th>Mana</th>
+                            <th>Portée</th>
+                            <th>Durée</th>
+                            <th>Bonus</th>
+                            <th>Effets</th>
+                            <th>Type</th>
+                            <th>Statut</th>
+                            <th>-</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="liste-sorts">
+                        <!-- Les lignes seront ajoutées par JavaScript -->
+                    </tbody>
+
+                </table>
+
+
+                <!-- Modèle utilisé pour créer chaque nouveau sort -->
+                <template id="modele-sort">
+                    <tr>
+                        <td><input type="text" placeholder="Nom du sort"></td>
+
+                        <td>
+                            <select>
+                                <option value="">Choisir...</option>
+                                <option>Action</option>
+                                <option>Action bonus</option>
+                                <option>Réaction</option>
+                                <option>Rituel</option>
+                                <option>-</option>
+                            </select>
+                        </td>
+
+                        <td><input type="text" placeholder="Mana"></td>
+                        <td><input type="text" placeholder="Portée"></td>
+                        <td><input type="text" placeholder="Durée"></td>
+                        <td><input type="text" placeholder="Bonus"></td>
+                        <td><input type="text" placeholder="Dés"></td>
+
+                        <td>
+                            <select>
+                                <option value="">Choisir...</option>
+                                <option>Tranchant</option>
+                                <option>Contondant</option>
+                                <option>Perforant</option>
+                                <option>Radiant</option>
+                                <option>Nécrotique</option>
+                                <option>Froid</option>
+                                <option>Feu</option>
+                                <option>Foudre</option>
+                                <option>Tonnerre</option>
+                                <option>Poison</option>
+                                <option>Acide</option>
+                                <option>Force</option>
+                                <option>Psychique</option>
+                                <option>Soins</option>
+                                <option>Autre</option>
+                                <option>-</option>
+                            </select>
+                        </td>
+
+                        <td><input type="text" placeholder="Jet"></td>
+
+                        <td>
+                            <button type="button" class="supprimer-sort">
+                                ✕
+                            </button>
+                        </td>
+                    </tr>
+                </template>
+            </div>
+
+            <button type="button" id="ajouter-sort">
+                + Ajouter un sort
+            </button>
+        </section>
+
+
+
+        <!-- Section : Pièces -->
+        <section class="section-pieces">
+
+            <h3>Pièces</h3>
+
+            <div class="grille-pieces">
+
+                <div class="champ-piece">
+                    <label for="pieces-pc">Cuivre</label>
+                    <input type="number" id="pieces-pc" min="0" value="0">
+                </div>
+
+                <div class="champ-piece">
+                    <label for="pieces-pa">Argent</label>
+                    <input type="number" id="pieces-pa" min="0" value="0">
+                </div>
+
+                <div class="champ-piece">
+                    <label for="pieces-po">Or</label>
+                    <input type="number" id="pieces-po" min="0" value="0">
+                </div>
+
+                <div class="champ-piece">
+                    <label for="pieces-pp">Platine</label>
+                    <input type="number" id="pieces-pp" min="0" value="0">
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================== SECTION : ÉQUIPEMENT ==================== -->
+        <section class="section-equipement">
+
+            <div class="conteneur-equipement">
+                <table class="table-equipement">
+                    <colgroup>
+                        <col class="col-equipement-nom">
+                        <col class="col-equipement-notes">
+                        <col class="col-equipement-equipe">
+                        <col class="col-equipement-action">
+                    </colgroup>
+
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Notes</th>
+                            <th>Équipé</th>
+                            <th>-</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="liste-equipement"></tbody>
+                </table>
+            </div>
+
+            <button type="button" id="ajouter-equipement">
+                + Ajouter un équipement
+            </button>
+
+            <template id="modele-equipement">
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Nom de l'objet">
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Notes">
+                    </td>
+                    <td class="cellule-equipe">
+                        <input type="checkbox" aria-label="Objet équipé">
+                    </td>
+                    <td>
+                        <button type="button" class="supprimer-equipement">✕</button>
+                    </td>
+                </tr>
+            </template>
+        </section>
+
+
+
+        <!-- ==================== SECTION : INVENTAIRE ==================== -->
+        <section class="section-inventaire">
+
+            <div class="conteneur-inventaire">
+                <table class="table-inventaire">
+                    <colgroup>
+                        <col class="col-inventaire-nom">
+                        <col class="col-inventaire-notes">
+                        <col class="col-inventaire-quantite">
+                        <col class="col-inventaire-action">
+                    </colgroup>
+
+                    <thead>
+                        <tr>
+                            <th>Objet</th>
+                            <th>Notes</th>
+                            <th>Qté</th>
+                            <th>-</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="liste-inventaire">
+                        <!-- Lignes ajoutées par JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <button type="button" id="ajouter-inventaire">
+                + Ajouter un objet
+            </button>
+
+            <template id="modele-inventaire">
+                <tr>
+                    <td><input type="text" placeholder="Nom de l'objet"></td>
+                    <td><input type="text" placeholder="Notes"></td>
+                    <td><input type="number" min="0" value="1"></td>
+                    <td>
+                        <button type="button" class="supprimer-inventaire">✕</button>
+                    </td>
+                </tr>
+            </template>
+
+        </section>
+
+
+        <!-- ==================== TRAITS D'ESPÈCES ==================== -->
+        <div class="groupe-traits-essences">
+        <section class="section-traits-especes">
+
+            <div class="conteneur-traits-especes">
+                <table class="table-traits-especes">
+                    <colgroup>
+                        <col class="col-trait-espece">
+                        <col class="col-description-trait">
+                        <col class="col-action-trait">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Traits d'espèce</th>
+                            <th>Description</th>
+                            <th>-</th>
+                        </tr>
+                    </thead>
+                    <tbody id="liste-traits-especes"></tbody>
+                </table>
+            </div>
+
+            <button type="button" id="ajouter-trait-espece">
+                + Ajouter un trait
+            </button>
+
+            <template id="modele-trait-espece">
+                <tr>
+                    <td><input type="text" placeholder="Nom du trait"></td>
+                    <td><textarea placeholder="Description du trait"></textarea></td>
+                    <td>
+                        <button type="button" class="supprimer-trait-espece">✕</button>
+                    </td>
+                </tr>
+            </template>
+        </section>
+
+        <!-- ==================== ESSENCES ==================== -->
+        <section class="section-essences">
+
+            <div class="conteneur-essences">
+                <table class="table-essences">
+                    <colgroup>
+                        <col class="col-essence">
+                        <col class="col-description-essence">
+                        <col class="col-action-essence">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Essences</th>
+                            <th>Description</th>
+                            <th>-</th>
+                        </tr>
+                    </thead>
+                    <tbody id="liste-essences"></tbody>
+                </table>
+            </div>
+
+            <button type="button" id="ajouter-essence">
+                + Ajouter une essence
+            </button>
+
+            <template id="modele-essence">
+                <tr>
+                    <td><input type="text" placeholder="Nom de l'essence"></td>
+                    <td><textarea placeholder="Description de l'essence"></textarea></td>
+                    <td>
+                        <button type="button" class="supprimer-essence">✕</button>
+                    </td>
+                </tr>
+            </template>
+        </section>
+        </div>
+
+
+    </main>
+    
+    <script src="script_feuille_de_personange.js"></script>
+
+</body>
+</html>

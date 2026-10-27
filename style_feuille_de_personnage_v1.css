@@ -1,0 +1,1355 @@
+
+/* Apparence générale du navigateur */
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #444;
+    font-family: Calibri, sans-serif;
+}
+
+/* Page A4 portrait */
+.page-a4 {
+    width: 21cm;
+    height: 29.7cm;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid black;
+}
+
+
+/* Première zone de la fiche */
+.zone-identite {
+    display: grid;
+
+    /* Colonne de gauche + portrait de 4 cm */
+    grid-template-columns: 4cm 3cm max-content minmax(0, 1fr);
+
+    /* Espace entre l'identité et le portrait */
+    gap: 3mm;
+
+    align-items: center;
+
+    /* Marge intérieure de la zone */
+    padding: 5mm;
+    box-sizing: border-box;
+}
+
+/* Champs d'identité */
+.identite-personnage {
+    display: flex;
+    flex-direction: column;
+    gap: 5mm;
+    min-width: 0;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Champ du nom */
+.champ-nom {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 0;
+    outline: none;
+    background: transparent;
+
+    font-family: Calibri, sans-serif;
+    font-size: 13px;
+
+    padding: 3px 2px;
+}
+
+/* Champs espèce et archétype */
+.champ-identite {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 0;
+    outline: none;
+    background: transparent;
+
+    font-family: Calibri, sans-serif;
+    font-size: 13px;
+
+    padding: 3px 2px;
+}
+
+/* Texte indicatif */
+.champ-nom::placeholder,
+.champ-identite::placeholder {
+    color: #555555;
+    font-style: italic;
+    opacity: 1;
+}
+
+/* Cadre du portrait : exactement 4 × 4 cm */
+.cadre-portrait {
+    width: 3cm;
+    height: 3cm;
+    box-sizing: border-box;
+
+    border: 1px solid black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    font-family: Calibri, sans-serif;
+    font-size: 10px;
+    color: #777777;
+    text-align: center;
+}
+
+/* Image du portrait */
+.cadre-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+/* Texte affiché avant le choix d'une image */
+#indication-portrait {
+    padding: 5px;
+}
+
+/* Champ de sélection masqué */
+#fichier-portrait {
+    display: none;
+}
+
+/* Ensemble des statistiques */
+.statistiques-personnage {
+    display: flex;
+    gap: 0mm;
+    margin-left: 0;
+    align-items: flex-start;
+    min-width: 0;
+    width: max-content;
+}
+
+/* Titres des statistiques : même hauteur */
+.bloc-niveau > label:first-child,
+.bloc-ca > label:first-child {
+    height: 7mm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* Bloc niveau */
+.bloc-niveau,
+.bloc-ca {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2mm;
+    min-width: 0;
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Cadres noirs pour les valeurs numériques */
+.valeur-statistique {
+    width: 1.2cm;
+    min-width: 0;
+    height: 1.2cm;
+    box-sizing: border-box;
+
+    border: 1px solid black;
+    border-radius: 0;
+    background: white;
+
+    text-align: center;
+    font-family: Calibri, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Inspiration héroïque */
+.inspiration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1mm;
+
+    font-size: 9px;
+    line-height: 1.2;
+    text-align: center;
+    cursor: pointer;
+}
+
+.inspiration input {
+    margin: 0;
+    width: 15px;
+    height: 15px;
+}
+
+
+/* Ensemble : PV, dés de vie et jets contre la mort */
+.bloc-survie {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr 1.5fr;
+    gap: 3mm;
+    align-items: start;
+    min-width: 0;
+    font-family: Calibri, sans-serif;
+}
+
+/* Chaque groupe de survie */
+.groupe-survie {
+    min-width: 0;
+    text-align: center;
+}
+
+/* Titres des groupes */
+.groupe-survie h3 {
+    margin: 0 0 2mm 0;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Colonnes des points de vie */
+.points-vie{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2mm;
+}
+
+.points-vie .champ-survie:first-child {
+    margin-top: 12.7mm;
+}
+
+.des-vie {
+    display: flex;
+    flex-direction: column;
+    gap: 2mm;
+}
+
+/* Champs numériques */
+.champ-survie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1mm;
+    min-width: 0;
+}
+
+.champ-survie label {
+    font-size: 11px;
+}
+
+/* Cases de valeurs */
+.champ-survie input {
+    width: 100%;
+    min-width: 0;
+    height: 6mm;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 0;
+    background: white;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Espacement entre Temp. et Max. */
+#pv-max {
+    margin-top: 1mm;
+}
+
+/* Jets contre la mort */
+.jets-mort {
+    display: flex;
+    flex-direction: column;
+    gap: 3mm;
+}
+
+.ligne-jets {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 1mm;
+    font-size: 11px;
+}
+
+.ligne-jets label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ligne-jets input {
+    margin: 0;
+    width: 15px;
+    height: 15px;
+}
+
+
+
+/* Section des caractéristiques de combat */
+/* Section des caractéristiques de combat */
+.section-combat {
+    width: 60%;
+    height: 3cm;
+    margin-top: -3mm;
+    margin-left: auto;
+    margin-right: 5mm;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+/* Organisation des trois zones */
+.combat-global {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Les deux bonus occupent 50 % du cadre */
+.combat-contenu {
+    width: 50%;
+    height: 100%;
+    border-right: 1px solid black;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+/* Les deux bonus se partagent équitablement leur zone */
+.bonus-contenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+}
+
+/* Chaque bloc de caractéristiques */
+.combat-bloc {
+    min-width: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Séparation entre les deux bonus */
+.bonus-contenu .combat-bloc + .combat-bloc {
+    border-left: 1px solid black;
+}
+
+/* Titres */
+.combat-bloc h3 {
+    margin: 0 0 1mm 0;
+    font-family: Calibri, sans-serif;
+    font-size: 11px;
+    text-align: center;
+}
+
+/* Organisation des caractéristiques et du bonus */
+.bonus-ligne {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3mm;
+    min-height: 15mm;
+    height: calc(100% - 5mm);
+    margin-top: 1mm;
+}
+
+/* Caractéristiques : cases et libellés */
+.caracteristiques {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1mm;
+}
+
+.case-carac {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5mm;
+    font-family: Calibri, sans-serif;
+    font-size: 11px;
+}
+
+.case-carac input {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+}
+
+/* Valeur numérique précédée du signe + */
+.valeur-bonus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1mm;
+    font-family: Calibri, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.valeur-bonus input {
+    width: 12mm;
+    height: 9mm;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 0;
+    background: white;
+    text-align: center;
+    font-family: Calibri, sans-serif;
+    font-size: 18px;
+}
+
+/* La réserve de mana occupe 25 % du cadre */
+.reserve-mana {
+    width: 20%;
+    height: 100%;
+    border-right: 1px solid black;
+    box-sizing: border-box;
+}
+
+/* Valeurs de mana disposées en colonne */
+.mana-valeurs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1mm;
+}
+
+/* Réduire les champs numériques de la réserve de mana */
+.reserve-mana .champ-survie input {
+    width: 12mm;
+    height: 7mm;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Organisation des informations complémentaires */
+.combat-informations {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 30%;
+    height: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 1mm;
+    gap: 1mm;
+}
+
+/* Chaque caractéristique */
+.info-combat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5mm;
+    width: 100%;
+    min-width: 0;
+}
+
+/* Libellés */
+.info-combat label {
+    font-family: Calibri, sans-serif;
+    font-size: 11px;
+    font-style: bold;
+    text-align: center;
+}
+
+/* Champs numériques encadrés */
+.info-combat input {
+    width: 12mm;
+    height: 6mm;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 0;
+    background: white;
+    text-align: center;
+    font-family: Calibri, sans-serif;
+    font-size: 12px;
+}
+
+
+/* Section des caractéristiques */
+/* Section des caractéristiques */
+.section-caracteristiques {
+    float: left;
+    width: 35%;
+    box-sizing: border-box;
+    margin-left: 3mm;
+    margin-top: -30mm;
+}
+
+.section-caracteristiques > h2 {
+    margin: 0 0 2mm 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Grille de deux colonnes */
+.grille-caracteristiques {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2mm;
+    align-items: start;
+}
+
+/* Bloc individuel d'une caractéristique */
+.caracteristique {
+    min-width: 0;
+    border: 1px solid black;
+    padding: 2mm;
+    box-sizing: border-box;
+}
+
+/* Nom de la caractéristique */
+.caracteristique h3 {
+    margin: 0 0 2mm 0;
+    padding-bottom: 1mm;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Valeur et modificateur */
+.valeurs-caracteristique {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2mm;
+    margin-bottom: 2mm;
+}
+
+.valeurs-caracteristique > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1mm;
+}
+
+.valeurs-caracteristique label {
+    font-size: 9px;
+    text-align: center;
+}
+
+.valeurs-caracteristique input {
+    width: 12mm;
+    height: 7mm;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 0;
+    background: white;
+    text-align: center;
+    font-family: Calibri, sans-serif;
+    font-size: 13px;
+}
+
+/* Sauvegarde */
+.sauvegarde {
+    display: flex;
+    align-items: center;
+    gap: 2mm;
+    padding: 1mm 0;
+    margin-bottom: 1mm;
+    border-top: 1px solid #777;
+    border-bottom: 1px solid #777;
+    font-size: 10px;
+}
+
+.sauvegarde strong {
+    margin-right: auto;
+    font-size: 10px;
+}
+
+.sauvegarde label,
+.competence label {
+    display: flex;
+    align-items: center;
+    gap: 0.5mm;
+    white-space: nowrap;
+    font-size: 9px;
+}
+
+/* Compétences */
+.competences {
+    display: flex;
+    flex-direction: column;
+    gap: 1mm;
+}
+
+.competence {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 1.5mm;
+    font-size: 10px;
+}
+
+.competence > span {
+    min-width: 0;
+}
+
+/* Cases à cocher */
+.sauvegarde input,
+.competence input {
+    width: 11px;
+    height: 11px;
+    margin: 0;
+}
+
+/* ==================== TECHNIQUES ==================== */
+/* ==================== TECHNIQUES ==================== */
+
+.section-techniques {
+    width: 60%;
+    margin-top: 2mm;
+    font-family: Calibri, sans-serif;
+    box-sizing: border-box;
+    float: right;
+    height: auto;
+    margin-left: auto;
+    margin-right: 5mm;
+}
+
+.table-techniques {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    font-size: 9px;
+}
+
+
+/* En-têtes : hauteur conservée */
+.table-techniques th {
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+/* Cellules des techniques : hauteur réduite */
+.table-techniques td {
+    border-top: 0;
+    border-left: 1px solid black;
+    border-right: 0;
+    border-bottom: 1px solid black;
+}
+
+
+.table-techniques th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 0;
+    border-bottom: 1px solid black;
+    padding: 1mm;
+    box-sizing: border-box;
+    background: #e8e8e8;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+
+/* En-têtes fixes pendant le défilement */
+.table-techniques thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #e8e8e8;
+}
+
+
+
+.table-techniques input,
+.table-techniques select,
+.table-techniques textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    font-family: Calibri, sans-serif;
+    font-size: 9px;
+    box-sizing: border-box;
+}
+
+
+.table-techniques textarea {
+    resize: vertical;
+    overflow-wrap: anywhere;
+}
+
+.table-techniques input:focus,
+.table-techniques select:focus,
+.table-techniques textarea:focus {
+    outline: 1px solid #777;
+}
+
+#ajouter-technique {
+    margin-top: 1mm;
+    padding: 0mm 0mm;
+    font-family: Calibri, sans-serif;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+/* Bouton de suppression d'une technique */
+.table-techniques .supprimer-technique {
+    display: block;
+    width: 100%;
+    padding: 1mm 0;
+    border: 0px solid #999;
+    background: white;
+    color: #b00020;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.table-techniques .supprimer-technique:hover {
+    background: #f5dada;
+}
+
+.table-techniques th:last-child,
+.table-techniques td:last-child {
+    border-right: 1px solid black;
+}
+
+
+/* Largeur des colonnes du tableau des techniques */
+
+/* Largeur des colonnes du tableau des techniques */
+.table-techniques .col-technique {width: 16%;}
+.table-techniques .col-cout {width: 15%;}
+.table-techniques .col-portee {width: 7%;}
+.table-techniques .col-duree {width: 9%;}
+.table-techniques .col-bonus {width: 8%;}
+.table-techniques .col-effets {width: 10%;}
+.table-techniques .col-type {width: 14%;}
+.table-techniques .col-statut {width: 9%;}
+.table-techniques .col-action {width: 4%;}
+
+/* Hauteur des lignes contenant les techniques */
+.table-techniques tbody td {
+    height: 6mm;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Champs de saisie compacts */
+.table-techniques tbody input,
+.table-techniques tbody select {
+    height: 4mm;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 9px;
+}
+
+/* Champ des effets */
+.table-techniques tbody textarea {
+    height: 4mm;
+    min-height: 4mm;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 9px;
+    resize: vertical;
+}
+
+
+/* ==================== DÉFILEMENT DES TABLEAUX ==================== */
+
+.conteneur-techniques,
+.conteneur-sorts {
+    max-height: 63mm;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Les tableaux occupent toute la largeur disponible */
+.conteneur-techniques .table-techniques,
+.conteneur-sorts .table-sorts {
+    width: 100%;
+    margin: 0;
+}
+
+
+/* ==================== SORTS ==================== */
+/* ==================== SORTS ==================== */
+
+.section-sorts {
+    float : right;
+    width: 60%;
+    margin-top: 2mm;
+    margin-right: 5mm;
+    margin-left: auto;
+    font-family: Calibri, sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* ==================== DÉFILEMENT DES SORTS ==================== */
+
+.conteneur-sorts {
+    width: 100%;
+    max-height: 65mm;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* Tableau */
+.table-sorts {
+    width: 100%;
+    margin: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    font-size: 9px;
+}
+
+/* En-têtes */
+.table-sorts th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 0;
+    border-bottom: 1px solid black;
+    padding: 1mm;
+    box-sizing: border-box;
+    background: #e8e8e8;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* Cellules */
+.table-sorts td {
+    border-top: 0;
+    border-left: 1px solid black;
+    border-right: 0;
+    border-bottom: 1px solid black;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Bordure droite du tableau */
+.table-sorts th:last-child,
+.table-sorts td:last-child {
+    border-right: 1px solid black;
+}
+
+/* Hauteur des lignes de données */
+.table-sorts tbody td {
+    height: 6mm;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Bouton d'ajout toujours accessible */
+#ajouter-sort {
+    display: block;
+    margin-top: 1mm;
+    padding: 0;
+    font-family: Calibri, sans-serif;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+
+
+/* Champs de saisie et menus déroulants */
+.table-sorts input,
+.table-sorts select,
+.table-sorts textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: 4mm;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    font-family: Calibri, sans-serif;
+    font-size: 9px;
+    box-sizing: border-box;
+}
+
+.table-sorts textarea {
+    resize: vertical;
+    overflow-wrap: anywhere;
+}
+
+.table-sorts input:focus,
+.table-sorts select:focus,
+.table-sorts textarea:focus {
+    outline: 1px solid #777;
+}
+
+/* Hauteur des lignes : en-têtes non concernés */
+.table-sorts tbody td {
+    height: 6mm;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Bouton d'ajout */
+#ajouter-sort {
+    margin-top: 1mm;
+    padding: 0;
+    font-family: Calibri, sans-serif;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+/* Bouton de suppression */
+.table-sorts .supprimer-sort {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0px solid #999;
+    background: white;
+    color: #b00020;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.table-sorts .supprimer-sort:hover {
+    background: #f5dada;
+}
+
+/* Largeurs des dix colonnes */
+.table-sorts .col-sort       { width: 16%; }
+.table-sorts .col-cout-sort  { width: 15%; }
+.table-sorts .col-mana       { width: 7%; }
+.table-sorts .col-portee-sort { width: 7%; }
+.table-sorts .col-duree-sort { width: 9%; }
+.table-sorts .col-bonus-sort { width: 8%; }
+.table-sorts .col-des-effets { width: 10%; }
+.table-sorts .col-type-sort  { width: 14%; }
+.table-sorts .col-jet-statut { width: 9%; }
+.table-sorts .col-action-sort { width: 4%; }
+
+
+
+/* ==================== PIÈCES ==================== */
+/* ==================== PIÈCES ==================== */
+
+.section-pieces {
+    width: 35%;
+    margin-top: 125mm;
+    margin-left: 3mm;
+    font-family: Calibri, sans-serif;
+    box-sizing: border-box;
+    border: 1px solid black;
+    padding: 1mm;
+}
+
+.section-pieces h3 {
+    margin: 0 0 1mm 0;
+    font-size: 11px;
+    text-align: center;
+}
+
+.grille-pieces {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5mm;
+}
+
+.champ-piece {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1mm;
+    min-width: 0;
+}
+
+.champ-piece label {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.champ-piece input {
+    width: 100%;
+    min-width: 0;
+    height: 6mm;
+    padding: 0;
+    border: 1px solid black;
+    border-radius: 0;
+    box-sizing: border-box;
+    font-family: Calibri, sans-serif;
+    font-size: 10px;
+    text-align: center;
+}
+
+
+
+/* ==================== ÉQUIPEMENT ET INVENTAIRE ==================== */
+
+.section-equipement,
+.section-inventaire {
+    clear: both;
+    width: 35%;
+    margin: 2mm 0 0 3mm;
+    font-family: Calibri, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Zones défilantes indépendantes */
+.conteneur-equipement{
+    width: 100%;
+    max-height: 30.5mm;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.conteneur-inventaire {
+    width: 100%;
+    max-height: 35.5mm;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+
+/* Tableaux */
+.table-equipement,
+.table-inventaire {
+    width: 100%;
+    margin: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    font-size: 9px;
+}
+
+/* En-têtes fixes */
+.table-equipement thead th,
+.table-inventaire thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #e8e8e8;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 0;
+    border-bottom: 1px solid black;
+    padding: 1mm;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Cellules */
+.table-equipement td,
+.table-inventaire td {
+    border-top: 0;
+    border-left: 1px solid black;
+    border-right: 0;
+    border-bottom: 1px solid black;
+    padding: 0;
+    height: 6mm;
+    box-sizing: border-box;
+}
+
+/* Bordure droite */
+.table-equipement th:last-child,
+.table-equipement td:last-child,
+.table-inventaire th:last-child,
+.table-inventaire td:last-child {
+    border-right: 1px solid black;
+}
+
+/* Champs de saisie */
+.table-equipement input,
+.table-inventaire input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: 4mm;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    font-family: Calibri, sans-serif;
+    font-size: 9px;
+    box-sizing: border-box;
+}
+
+.table-equipement input:focus,
+.table-inventaire input:focus {
+    outline: 1px solid #777;
+}
+
+/* Boutons d'ajout */
+#ajouter-equipement,
+#ajouter-inventaire {
+    display: block;
+    margin-top: 1mm;
+    padding: 0;
+    font-family: Calibri, sans-serif;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+/* Boutons de suppression */
+.table-equipement .supprimer-equipement,
+.table-inventaire .supprimer-inventaire {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0px solid #999;
+    background: white;
+    color: #b00020;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.table-equipement .supprimer-equipement:hover,
+.table-inventaire .supprimer-inventaire:hover {
+    background: #f5dada;
+}
+
+
+/* Largeur des colonnes du tableau Équipement */
+.table-equipement .col-equipement-nom {
+    width: 32%;
+}
+
+.table-equipement .col-equipement-notes {
+    width: 48%;
+}
+
+.table-equipement .col-equipement-equipe {
+    width: 14%;
+}
+
+.table-equipement .col-equipement-action {
+    width: 6%;
+}
+
+/* Centrer la case à cocher */
+.table-equipement .cellule-equipe {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table-equipement .cellule-equipe input[type="checkbox"] {
+    display: inline-block;
+    width: 3.5mm;
+    height: 3.5mm;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+
+/* Largeurs des colonnes : inventaire */
+.table-inventaire .col-inventaire-nom {
+    width: 40%;
+}
+
+.table-inventaire .col-inventaire-quantite {
+    width: 12%;
+}
+
+.table-inventaire .col-inventaire-notes {
+    width: 42%;
+}
+
+.table-inventaire .col-inventaire-action {
+    width: 6%;
+}
+
+
+/* ==================== TRAITS D'ESPÈCES ET ESSENCES ==================== */
+
+
+/* Groupe des deux sections */
+.groupe-traits-essences {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3mm;
+    width: 60%;
+    margin-top: -79mm;
+    margin-right: 5mm;
+    margin-left: auto;
+    box-sizing: border-box;
+    align-items: start;
+}
+
+/* Chaque section occupe une colonne */
+.section-traits-especes,
+.section-essences {
+    float: none;
+    clear: none;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    font-family: Calibri, sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* Conteneurs avec défilement */
+.conteneur-traits-especes,
+.conteneur-essences {
+    width: 100%;
+    max-height: 74.5mm;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+/* Tableaux */
+.table-traits-especes,
+.table-essences {
+    width: 100%;
+    margin: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    font-size: 9px;
+}
+
+.table-traits-especes th,
+.table-essences th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #e8e8e8;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 0;
+    border-bottom: 1px solid black;
+    padding: 0mm;
+    height: 4mm;
+    text-align: center;
+    overflow-wrap: anywhere;
+    box-sizing: border-box;
+}
+
+.table-traits-especes td,
+.table-essences td {
+    border-top: 0;
+    border-left: 1px solid black;
+    border-right: 0;
+    border-bottom: 1px solid black;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.table-traits-especes th:last-child,
+.table-traits-especes td:last-child,
+.table-essences th:last-child,
+.table-essences td:last-child {
+    border-right: 1px solid black;
+}
+
+/* Champs de saisie */
+.table-traits-especes input,
+.table-essences input,
+.table-traits-especes textarea,
+.table-essences textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 17.3mm;
+    margin: 0;
+    padding: 0.5mm;
+    border: none;
+    background: transparent;
+    font-family: Calibri, sans-serif;
+    font-size: 9px;
+    box-sizing: border-box;
+}
+
+.table-traits-especes textarea,
+.table-essences textarea {
+    resize: vertical;
+    overflow-wrap: anywhere;
+}
+
+.table-traits-especes input:focus,
+.table-essences input:focus,
+.table-traits-especes textarea:focus,
+.table-essences textarea:focus {
+    outline: 1px solid #777;
+}
+
+/* Largeur des colonnes */
+.table-traits-especes .col-trait-espece,
+.table-essences .col-essence {
+    width: 32%;
+}
+
+.table-traits-especes .col-description-trait,
+.table-essences .col-description-essence {
+    width: 62%;
+}
+
+.table-traits-especes .col-action-trait,
+.table-essences .col-action-essence {
+    width: 6%;
+}
+
+/* Boutons d'ajout */
+#ajouter-trait-espece,
+#ajouter-essence {
+    display: block;
+    margin-top: 1mm;
+    padding: 0;
+    font-family: Calibri, sans-serif;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+/* Boutons de suppression */
+.table-traits-especes .supprimer-trait-espece,
+.table-essences .supprimer-essence {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0px solid #999;
+    background: white;
+    color: #b00020;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.table-traits-especes .supprimer-trait-espece:hover,
+.table-essences .supprimer-essence:hover {
+    background: #f5dada;
+}
+
+
