@@ -5,12 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fiche de personnage D&D</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_v1.css">
     
 </head>
 
 
 <body>
+
+    <div class="commandes-sauvegarde">
+        <button type="button" id="sauvegarder-personnage">
+            Sauvegarder le personnage
+        </button>
+
+        <button type="button" id="charger-personnage">
+            Charger un personnage
+        </button>
+
+        <input
+            type="file"
+            id="fichier-personnage"
+            accept=".json,application/json"
+            hidden
+        >
+    </div>
+
+
+
     <main class="page-a4">
 
         <!-- Première zone : identité et portrait -->
@@ -956,7 +976,7 @@
 
     </main>
     
-    <script src="script.js"></script>
+    <script src="script_v1.js"></script>
 
 </body>
 </html>
