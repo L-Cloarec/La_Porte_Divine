@@ -1,0 +1,6720 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
+
+
+/* ============================= */
+/* Paramètres généraux de la page */
+/* ============================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #777474;
+    font-family: Calibri, sans-serif;
+}
+
+/* ============================= */
+/* Page A4 */
+/* ============================= */
+
+.page-a4 {
+    width: 21cm;
+    min-height: 29.7cm;
+    margin: 0 auto;
+    padding: 2mm;
+    position: relative;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 4.5px transparent #FFC000;
+}
+
+/* ============================= */
+/* Les trois grandes zones */
+/* ============================= */
+
+/* ============================= */
+/* Zone supérieure */
+/* ============================= */
+
+.zone-superieure {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2mm;
+    width: 100%;
+    min-height: 4.3cm;
+    margin-bottom: 2mm;
+}
+
+
+/* ======= Sous-zone 1 : Identité, Espèce, Archétype, Bouton portrait, bouton inspiration, Portrait, Indication du niveau ======= */
+/* ======= Sous-zone 1 : Identité, Espèce, Archétype, Bouton portrait, bouton inspiration, Portrait, Indication du niveau ======= */
+/* ======= Sous-zone 1 : Identité, Espèce, Archétype, Bouton portrait, bouton inspiration, Portrait, Indication du niveau ======= */
+
+.colonne-identite-portrait {
+    display: grid;
+    grid-template-columns: 5.8cm 4cm;
+    column-gap: 1mm;
+    align-items: center;
+    padding: 2mm;
+    min-width: 0;
+    border: 1px solid #d9c7a5;
+
+    background: linear-gradient(
+        145deg,
+        #f3ead8,
+        #e8dfca
+    );
+
+    border-radius: 10px;
+}
+
+/* Informations du personnage */
+/* Informations du personnage */
+.identite-personnage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+}
+
+/* Nom du personnage */
+/* Nom du personnage */
+.champ-nom-personnage {
+    min-width: 0;
+    width: 5.8cm;
+    box-sizing: border-box;
+    
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: center;
+
+    background: transparent;
+    border: none;
+    border-bottom: none;
+    border-radius: 0;
+
+    outline: none;
+
+    margin-bottom: 7mm;
+}
+.champ-nom-personnage:focus {
+    border-bottom-color: #806746;
+}
+.champ-nom-personnage {
+    position: relative;
+}
+.champ-nom-personnage {
+    background-image: linear-gradient(
+        to right,
+        transparent,
+        #b99a68 20%,
+        #b99a68 80%,
+        transparent
+    );
+
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    background-position: center bottom;
+}
+
+
+/* Bouton de sélection de l'espèce */
+/* Bouton de sélection de l'espèce */
+
+.selecteur-espece {
+    position: relative;
+}
+.bouton-selecteur-espece {
+    width: 5.8cm;
+    min-width: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1mm 1mm;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #66513b;
+    background-color: #f8f1e3;
+    border: 1px solid #c4ad85;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    margin-bottom: 1.5mm;
+}
+.bouton-selecteur-espece:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+}
+.fleche-espece {
+    font-size: 10px;
+    color: #a98550;
+}
+.menu-especes {
+    position: absolute;
+    top: calc(100% - 1mm);
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    background-color: #f8f1e3;
+    border: 1px solid #c4ad85;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 1mm;
+    box-shadow: 0 3px 7px rgba(73, 60, 50, 0.2);
+}
+.option-espece {
+    position: relative;
+}
+.bouton-option-espece {
+    display: block;
+    width: 100%;
+    padding: 2mm 2mm;
+    text-align: left;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #493c32;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #d9c7a5;
+    cursor: pointer;
+}
+.bouton-option-espece:hover {
+    background-color: rgba(185, 154, 104, 0.18);
+}
+.sous-menu-espece {
+    display: flex;
+    flex-direction: column;
+    position: static;
+    padding: 1mm 0 1mm 4mm;
+    background-color: rgba(185, 154, 104, 0.08);
+    border-left: 2px solid #c4ad85;
+}
+.sous-menu-espece[hidden] {
+    display: none;
+}
+.bouton-option-sous-race {
+    width: 100%;
+    padding: 1.5mm 2mm;
+    text-align: left;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #66513b;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.bouton-option-sous-race:hover {
+    background-color: rgba(185, 154, 104, 0.2);
+    color: #493c32;
+}
+.menu-especes[hidden] {
+    display: none;
+}
+/* Archétype du personnage */
+/* Archétype du personnage */
+.champ-archetype-personnage {
+    width: 5.8cm;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 1mm 1mm;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-style: italic;
+    color: #66513b;
+    text-align: left;
+    background-color: #f8f1e3;
+    border: 1px solid #d9c7a5;
+    border-radius: 6px;
+    outline: none;
+    margin-bottom: 5mm;
+}
+.champ-archetype-personnage:focus {
+    border-color: #a98550;
+    box-shadow: 0 0 3px rgba(169, 133, 80, 0.3);
+}
+.champ-archetype-personnage:hover{
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+/* Boutons Niveau & Inspiration */
+/* Boutons Niveau & Inspiration */
+.boutons-personnage {
+    display: flex;
+    flex-direction: column;
+    gap: 1mm;
+    align-items: stretch;
+    align-self: center;
+    width: 3cm;
+}
+.boutons-personnage button {
+    width: 90%;
+    box-sizing: border-box;
+    padding: 1mm 1mm;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #493c32;
+    background-color: #f8f1e3;
+    border: 1px solid #c4ad85;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.boutons-personnage button:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.symbole-inspiration {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 0;
+    vertical-align: middle;
+    margin-right: 2px;
+    transform: translateY(-1px);
+}
+.symbole-inspiration.actif {
+    color: #b8860b;
+}
+/* Cadre du portrait */
+/* Cadre du portrait */
+.cadre-portrait {
+    width: 3.9cm;
+    height: 4cm;
+    box-sizing: border-box;
+    border: 1.5px solid #d9c7a5;
+    border-radius: 10px;
+    background-color: #f8f1e3;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    font-style: italic;
+    color: #806746;
+    text-align: center;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.cadre-portrait:hover {
+    border-color: #a98550;
+    box-shadow: 0 2px 5px rgba(73, 60, 50, 0.3);
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+}
+#indication-portrait {
+    padding: 5px;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-style: italic;
+    line-height: 1.5;
+    color: #806746;
+    text-align: center;
+    transition: color 0.2s;
+}
+.cadre-portrait:hover #indication-portrait {
+    color: #493c32;
+}
+#fichier-portrait {
+    display: none;
+}
+.cadre-portrait img {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.niveau-personnage {
+    position: absolute;
+    right: 0.5mm;
+    bottom: 0.5mm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0mm;
+    width: 1.25cm;
+    padding: 1mm;
+    background-color: #f8f1e3;
+    border: 1px solid #c4ad85;
+    border-radius: 8px;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #66513b;
+    z-index: 2;
+}
+.niveau-personnage input {
+    width: 14px;
+    min-width: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: center;
+}
+.niveau-personnage input::-webkit-inner-spin-button,
+.niveau-personnage input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.niveau-personnage input {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.niveau-personnage input:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 2px;
+}
+
+.niveau-personnage input:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 2px;
+}
+
+
+/* Sous-zone 2 :  Classe d'armure, Points de vie & Dés de vie */
+/* Sous-zone 2 :  Classe d'armure, Points de vie & Dés de vie */
+/* Sous-zone 2 :  Classe d'armure, Points de vie & Dés de vie */
+
+.colonne-ca-points-de-vie {
+    min-width: 0;
+    min-height: 4.3cm;
+
+    border: 1px solid #d9c7a5;
+
+    background: linear-gradient(
+        145deg,
+        #f3ead8,
+        #e8dfca
+    );
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+}
+
+/* Classe d'armure */
+/* Classe d'armure */
+.classe-armure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 1.9cm;
+    height: 1.9cm;
+    box-sizing: border-box;
+    padding: 1mm 1mm;
+    background-color: #f8f1e3;
+    border: 1px solid #d9c7a5;
+    border-radius: 10px;
+}
+.classe-armure:focus-within {
+    border-color: #a98550;
+    box-shadow: 0 0 3px rgba(169, 133, 80, 0.3);
+}
+.valeur-classe-armure {
+    width: 100%;
+    height: 100%;
+
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #493c32;
+
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+}
+
+.valeur-classe-armure::-webkit-inner-spin-button,
+.valeur-classe-armure::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Effet au survol des valeurs */
+.valeur-classe-armure:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 10px;
+}
+
+/* Effet lorsque les champs sont sélectionnés */
+.valeur-classe-armure:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 10px;
+}
+
+
+.conteneur-classe-armure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 3.5mm;
+}
+.libelle-classe-armure {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #493c32;
+
+    padding: 1mm 2mm;
+    margin-top: 1mm;
+}
+
+.classe-armure:hover{
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+
+
+/* Points de vie */
+/* Points de vie */
+.cadre-points-de-vie {
+    width: 6.5cm;
+    height: 1.8cm;
+    box-sizing: border-box;
+    border: 1px solid #D4AF67;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5mm 1.5mm 0mm 1.5mm;       /* L'ordre est : haut, droite, bas, gauche. */
+    gap: 1mm;
+    background-color: #f8f1e3;
+    border: 1px solid #d9c7a5;
+    
+}
+.libelle-points-de-vie {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    margin-bottom: 1mm;
+    font-weight: bold;
+    color: #493c32;
+}
+.conteneur-points-de-vie {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4mm;
+    margin-top: 2mm;
+    align-self: flex-start;
+}
+.cadre-pv-principaux {
+    flex: 1;
+    min-width: 0;
+    border: 0.5px solid #d9c7a5;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cadre-pv-principaux:focus-within {
+    border-color: #a98550;
+    box-shadow: 0 0 3px rgba(169, 133, 80, 0.3);
+}
+.cadre-pv-principaux:hover{
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.cadre-pv-temporaires {
+    width: 1.3cm;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border: 0.5px solid #d9c7a5;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding: 0mm 0mm 0mm 0mm; 
+}
+.cadre-pv-temporaires:focus-within {
+    border-color: #a98550;
+    box-shadow: 0 0 3px rgba(169, 133, 80, 0.3);
+}
+.cadre-pv-temporaires:hover{
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.barre-pv {
+    width: 92%;
+    height: 6px;
+    background-color: #D8C6A5;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-left: 7px;
+}
+.remplissage-pv {
+    width: 100%;
+    height: 100%;
+    background-color: #4ead00;
+    border-radius: 20px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+/* =====================================================
+   ALERTE VISUELLE : FAIBLES POINTS DE VIE
+===================================================== */
+@keyframes pulsation-pv {
+    0%, 100% {box-shadow: 0 0 0 rgba(190, 35, 35, 0);}
+    50% {box-shadow: 0 0 9px rgba(190, 35, 35, 0.8);}
+}
+.cadre-points-de-vie.alerte-pv {
+    animation: pulsation-pv var(--vitesse-pulsation) ease-in-out infinite;
+}
+/* =====================================================
+   FIN ALERTE VISUELLE : FAIBLES POINTS DE VIE
+===================================================== */
+.ligne-valeurs-pv {
+    display: flex;
+    align-items: stretch;
+    gap: 3mm;
+    flex: 1;
+    min-height: 0;
+}
+.valeurs-pv {
+    display: grid;
+    height: 1cm;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: -2mm;
+    margin-top: -1mm;
+}
+.valeur-pv-actuelle,
+.valeur-pv-max,
+.valeur-pv-temp {
+    width: 100%;
+    min-width: 0;
+    height: 1cm;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    box-sizing: border-box;
+    color: #493c32;
+}
+
+/* Effet au survol des valeurs */
+.valeur-pv-actuelle:hover,
+.valeur-pv-max:hover,
+.valeur-pv-temp:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 10px;
+}
+
+.separateur-pv {
+    font-size: 20px;
+    font-family: Georgia, serif;
+}
+
+/* Effet lorsque les champs sont sélectionnés */
+.valeur-pv-actuelle:focus,
+.valeur-pv-max:focus,
+.valeur-pv-temp:focus  {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 10px;
+}
+
+.ligne-libelles-pv {
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    color: #493c32;
+}
+.libelles-pv-principaux {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    text-align: center;
+    color: #493c32;
+}
+.libelles-pv-principaux span:first-child {
+    grid-column: 1;
+}
+.libelles-pv-principaux span:last-child {
+    grid-column: 3;
+}
+.libelle-pv-temp {
+    width: 1.3cm;
+    flex-shrink: 0;
+}
+.conteneur-degats-des-de-vie {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3mm;
+    margin-top: 1.5mm;
+}
+.cadre-nombre-degats {
+    width: 2.4cm;
+    height: 1.6cm;
+    padding: 1mm;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.ligne-nombre-degats {
+    display: grid;
+    grid-template-columns: 5mm 1fr 5mm;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+}
+.bouton-degats,
+.bouton-soin {
+    width: 5mm;
+    height: 5mm;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    line-height: 1;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: 900;
+
+    border: 1px solid #d9c7a5;
+    border-radius: 2px;
+    background-color: #f8f1e3;
+}
+.bouton-degats {
+    color: #C00000;
+    margin: 0;
+}
+.bouton-soin {
+    color: #385723;
+    margin: 0;
+}
+.bouton-degats:hover,
+.bouton-soin:hover{
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+    cursor: pointer;
+}
+
+.valeur-nombre-degats {
+    width: 15mm;
+    height: 15mm;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    outline: none;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+
+    border: 1px solid #d9c7a5;
+    border-radius: 10px;
+
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #493c32;
+}
+
+/* Effet au survol des valeurs */
+.valeur-nombre-degats:hover{
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 10px;
+}
+
+/* Effet lorsque les champs sont sélectionnés */
+.valeur-nombre-degats:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 10px;
+}
+.ligne-libelles-degats {
+    display: grid;
+    grid-template-columns: 5mm 1fr 5mm;
+    align-items: center;
+    width: 100%;
+
+    margin-top: -1.5mm;
+
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    color: #493c32;
+}
+.ligne-libelles-degats span {
+    width: 100%;
+    text-align: center;
+}
+.ligne-libelles-degats span:last-child {
+    transform: translateX(11.5mm);
+}
+/* Cadre indépendant des dés de vie */
+.cadre-des-de-vie {
+    width: 3.8cm;
+    height: 1.6cm;
+    padding: 1mm;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1mm;
+
+}
+
+/* Cadre des dés de vie utilisés / total */
+/* Cadre des dés de vie utilisés / total */
+.cadre-des-de-vie-utilises {
+    width: 2.4cm;
+    height: 1.2cm;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #d9c7a5;
+    border-radius: 10px;
+    background-color: #f8f1e3;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+}
+
+/* Effet au survol */
+.cadre-des-de-vie-utilises:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+
+/* Libellé des dés de vie */
+.libelle-des-de-vie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #493c32;
+}
+
+/* Conteneur du type de dé */
+.conteneur-type-de {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Valeur modifiable du type de dé */
+.type-de-de {
+    width: 4.2mm;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #493c32;
+
+    box-sizing: border-box;
+}
+
+/* Conteneur des deux valeurs */
+.nombre-de-vie {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+/* Valeurs modifiables */
+.valeur-de-vie-actuelle,
+.valeur-de-vie-total {
+    width: 40%;
+    height: 100%;
+    min-width: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #493c32;
+    box-sizing: border-box;
+}
+
+/* Séparateur */
+.separateur-de-vie {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #493c32;
+}
+/* Effet au survol des valeurs */
+.valeur-de-vie-actuelle:hover,
+.valeur-de-vie-total:hover,
+.type-de-de:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 4px;
+}
+
+/* Effet lorsque les champs sont sélectionnés */
+.valeur-de-vie-actuelle:focus,
+.valeur-de-vie-total:focus,
+.type-de-de:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 4px;
+}
+
+/* =======  Zone Centrale ======= */
+/* =======  Zone Centrale ======= */
+/* =======  Zone Centrale ======= */
+.zone-centrale {
+    width: 100%;
+    min-height: 16.8cm;
+    margin-bottom: 1mm;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+/* =======  Sous-zone 3 :  Caractéristiques, Sauvegarde et Compétences ======= */
+/* =======  Sous-zone 3 :  Caractéristiques, Sauvegarde et Compétences ======= */
+/* =======  Sous-zone 3 :  Caractéristiques, Sauvegarde et Compétences ======= */
+.colonne-caracteristiques {
+    width: 7.5cm;
+    height: 16.8cm;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1mm;
+}
+.bloc-cinq-caracteristiques {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1mm;
+    row-gap: 1mm;
+    flex: 0 0 auto;
+    margin: 0mm 0mm 0mm 0mm;
+    height: auto;
+}
+.colonne-gauche-caracteristiques {
+    display: flex;
+    flex-direction: column;
+    gap: 1mm;
+    height: 13.2cm;
+}
+.colonne-droite-caracteristiques {
+    display: flex;
+    flex-direction: column;
+    gap: 12mm;
+    height: 13.2cm;
+}
+.cadre-constitution,
+.cadre-force,
+.cadre-dexterite,
+.cadre-intelligence,
+.cadre-sagesse,
+.cadre-charisme {
+    box-sizing: border-box;
+    border: 1px solid #d9c7a5;
+    border-radius: 10px;
+    background: linear-gradient(
+        145deg,
+        #f3ead8,
+        #e8dfca
+    );
+}
+/* =======  CONSTITUTION ======= */
+/* =======  CONSTITUTION ======= */
+.cadre-constitution {
+    height: 3.3cm;
+    width: 3.7cm;
+    flex-shrink: 0;
+}
+.titre-constitution {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: center;
+    margin-top: 1.5mm;
+    margin-bottom: 1.5mm;
+    cursor: pointer;
+    position: relative;
+}
+.titre-constitution::after {
+    content: "";
+    position: absolute;
+    bottom: -0.2mm;
+    width: 0;
+    height: 1.5px;
+    background-color: #a98550;
+    transition: width 0.2s ease, left 0.2s ease;
+}
+.titre-constitution:hover::after {
+    width: 3.2cm;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.conteneur-valeurs-constitution {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10mm;
+    margin-top: 1mm;
+}
+.bloc-valeur-constitution,
+.bloc-modificateur-constitution {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1mm;
+}
+.cadre-valeur-constitution,
+.cadre-modificateur-constitution {
+    width: 1.2cm;
+    height: 1.2cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 8px;
+    background-color: #f8f1e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.champ-valeur-constitution,
+.champ-modificateur-constitution {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #493c32;
+}
+.champ-valeur-constitution:hover,
+.champ-modificateur-constitution:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+}
+.champ-valeur-constitution:focus,
+.champ-modificateur-constitution:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+}
+.bloc-valeur-constitution span,
+.bloc-modificateur-constitution span {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #806746;
+}
+.conteneur-sauvegarde-constitution {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 3.45cm;
+    height: 0.7cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 6px;
+    padding: 1mm 1mm;
+    margin: 1mm 1mm 0;
+    background-color: #f8f1e3;
+}
+.conteneur-sauvegarde-constitution span {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #66513b;
+}
+.conteneur-sauvegarde-constitution:hover {
+    border-color: #a98550;
+    box-shadow: 0 2px 5px rgba(73, 60, 50, 0.3);
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    cursor: pointer;
+}
+.cercle-sauvegarde-constitution {
+    width: 0.35cm;
+    height: 0.35cm;
+    box-sizing: border-box;
+    border: 1.5px solid #a98550;
+    border-radius: 50%;
+    background-color: #f8f1e3;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.cercle-sauvegarde-constitution:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.cercle-sauvegarde-constitution.maitrise {
+    background-color: #b8860b;
+    border-color: #b8860b;
+}
+/* =======  FORCE ======= */
+/* =======  FORCE ======= */
+.cadre-force {
+    height: 4.2cm;
+    width: 3.7cm;
+    flex-shrink: 0;
+}
+.titre-force {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: center;
+    margin-top: 1.5mm;
+    margin-bottom: 1.5mm;
+    cursor: pointer;
+    position: relative;
+}
+.titre-force::after {
+    content: "";
+    position: absolute;
+    bottom: -0.1mm;
+    width: 0;
+    height: 1.5px;
+    background-color: #a98550;
+    transition: width 0.2s ease, left 0.2s ease;
+}
+.titre-force:hover::after {
+    width: 1.5cm;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.conteneur-valeurs-force {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10mm;
+    margin-top: 1mm;
+}
+.bloc-valeur-force,
+.bloc-modificateur-force {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1mm;
+}
+.cadre-valeur-force,
+.cadre-modificateur-force {
+    width: 1.2cm;
+    height: 1.2cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 8px;
+    background-color: #f8f1e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.champ-valeur-force,
+.champ-modificateur-force {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #493c32;
+}
+.champ-valeur-force:hover,
+.champ-modificateur-force:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+}
+.champ-valeur-force:focus,
+.champ-modificateur-force:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+}
+.bloc-valeur-force span,
+.bloc-modificateur-force span {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #806746;
+}
+.conteneur-sauvegarde-force {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 3.45cm;
+    height: 0.7cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 6px;
+    padding: 1mm 1mm;
+    margin: 1mm 1mm 0;
+    background-color: #f8f1e3;
+}
+.conteneur-sauvegarde-force span {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #66513b;
+}
+.conteneur-sauvegarde-force:hover {
+    border-color: #a98550;
+    box-shadow: 0 2px 5px rgba(73, 60, 50, 0.3);
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    cursor: pointer;
+}
+.cercle-sauvegarde-force {
+    width: 0.35cm;
+    height: 0.35cm;
+    box-sizing: border-box;
+    border: 1.5px solid #a98550;
+    border-radius: 50%;
+    background-color: #f8f1e3;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.cercle-sauvegarde-force:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.cercle-sauvegarde-force.maitrise {
+    background-color: #b8860b;
+    border-color: #b8860b;
+}
+.conteneur-competence-force {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 3.45cm;
+    height: 0.7cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 6px;
+    padding: 1mm 1mm;
+    margin: 2mm 1mm 0;
+    background-color: #f8f1e3;
+}
+.conteneur-competence-force span {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #66513b;
+    font-weight: bold;
+}
+.nom-competence-force {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 14px;
+    line-height: 14px;
+    cursor: pointer;
+}
+.nom-competence-force::after {
+    content: "";
+    position: absolute;
+    bottom: -0.1px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: #a98550;
+    transition: width 0.2s ease, left 0.2s ease;
+}
+.nom-competence-force:hover::after {
+    width: 100%;
+    left: 0%;
+}
+.conteneur-competence-force:hover {
+    border-color: #a98550;
+    box-shadow: 0 2px 5px rgba(73, 60, 50, 0.3);
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    cursor: pointer;
+}
+.cercle-competence-force {
+    width: 0.35cm;
+    height: 0.35cm;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border: 1.5px solid #a98550;
+    border-radius: 50%;
+    background-color: #f8f1e3;
+    padding: 0;
+    cursor: pointer;
+}
+.ligne-competence-force {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.cercle-competence-force:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.cercle-competence-force.maitrise {
+    background-color: #b8860b;
+    border-color: #b8860b;
+}
+.cercle-competence-force.maitrise:hover {
+    background: #b8860b;
+    border-color: #b8860b;
+    box-shadow: 0 0 3px rgba(184, 134, 11, 0.4);
+}
+.cercle-competence-force.expertise {
+    background-color: #b8860b;
+    border: 1.5px solid #b8860b;
+    box-shadow:
+        inset 0 0 0 2px #f8f1e3,
+        inset 0 0 0 3.5px #b8860b;
+}
+.cercle-competence-force.expertise,
+.cercle-competence-force.expertise:hover {
+    background: #b8860b;
+    border: 1.5px solid #b8860b;
+    box-shadow:
+        inset 0 0 0 2px #f8f1e3,
+        0 0 3px rgba(184, 134, 11, 0.5);
+}
+/* =======  DEXTERITE ======= */
+/* =======  DEXTERITE ======= */
+.cadre-dexterite {
+    height: 5.5cm;
+    width: 3.7cm;
+    flex-shrink: 0;
+}
+.titre-dexterite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: center;
+    margin-top: 1.5mm;
+    margin-bottom: 1.5mm;
+    cursor: pointer;
+    position: relative;
+}
+.titre-dexterite::after {
+    content: "";
+    position: absolute;
+    bottom: -0.2mm;
+    width: 0;
+    height: 1.5px;
+    background-color: #a98550;
+    transition: width 0.2s ease, left 0.2s ease;
+}
+.titre-dexterite:hover::after {
+    width: 2.8cm;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.conteneur-valeurs-dexterite {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10mm;
+    margin-top: 1mm;
+}
+.bloc-valeur-dexterite,
+.bloc-modificateur-dexterite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1mm;
+}
+.cadre-valeur-dexterite,
+.cadre-modificateur-dexterite {
+    width: 1.2cm;
+    height: 1.2cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 8px;
+    background-color: #f8f1e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.champ-valeur-dexterite,
+.champ-modificateur-dexterite {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #493c32;
+}
+.champ-valeur-dexterite:hover,
+.champ-modificateur-dexterite:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+}
+.champ-valeur-dexterite:focus,
+.champ-modificateur-dexterite:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+}
+.bloc-valeur-dexterite span,
+.bloc-modificateur-dexterite span {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #806746;
+}
+.conteneur-sauvegarde-dexterite {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 3.45cm;
+    height: 0.7cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 6px;
+    padding: 1mm 1mm;
+    margin: 1mm 1mm 0;
+    background-color: #f8f1e3;
+}
+.conteneur-sauvegarde-dexterite span {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #66513b;
+}
+.conteneur-sauvegarde-dexterite:hover {
+    border-color: #a98550;
+    box-shadow: 0 2px 5px rgba(73, 60, 50, 0.3);
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    cursor: pointer;
+}
+.cercle-sauvegarde-dexterite {
+    width: 0.35cm;
+    height: 0.35cm;
+    box-sizing: border-box;
+    border: 1.5px solid #a98550;
+    border-radius: 50%;
+    background-color: #f8f1e3;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.cercle-sauvegarde-dexterite:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.cercle-sauvegarde-dexterite.maitrise {
+    background-color: #b8860b;
+    border-color: #b8860b;
+}
+.conteneur-competences-dexterite {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 3.45cm;
+    height: 2cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 6px;
+    padding: 1mm;
+    margin: 2mm 1mm 0;
+    background-color: #f8f1e3;
+}
+.conteneur-competences-dexterite span {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #66513b;
+    font-weight: bold;
+}
+.ligne-competence-dexterite span {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 14px;
+    line-height: 14px;
+    cursor: pointer;
+}
+.ligne-competence-dexterite span::after {
+    content: "";
+    position: absolute;
+    bottom: -0.1px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: #a98550;
+    transition: width 0.2s ease, left 0.2s ease;
+}
+.ligne-competence-dexterite span:hover::after {
+    width: 100%;
+    left: 0;
+}
+.conteneur-competences-dexterite:hover {
+    border-color: #a98550;
+    box-shadow: 0 2px 5px rgba(73, 60, 50, 0.3);
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+}
+.ligne-competence-dexterite {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.cercle-competence-dexterite {
+    width: 0.35cm;
+    height: 0.35cm;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border: 1.5px solid #a98550;
+    border-radius: 50%;
+    background-color: #f8f1e3;
+    padding: 0;
+    cursor: pointer;
+}
+.cercle-competence-dexterite:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.cercle-competence-dexterite.maitrise {
+    background-color: #b8860b;
+    border-color: #b8860b;
+}
+.cercle-competence-dexterite.maitrise:hover {
+    background: #b8860b;
+    border-color: #b8860b;
+    box-shadow: 0 0 3px rgba(184, 134, 11, 0.4);
+}
+.cercle-competence-dexterite.expertise,
+.cercle-competence-dexterite.expertise:hover {
+    background: #b8860b;
+    border: 1.5px solid #b8860b;
+    box-shadow:
+        inset 0 0 0 2px #f8f1e3,
+        0 0 3px rgba(184, 134, 11, 0.5);
+}
+/* =======  INTELLIGENCE ======= */
+/* =======  INTELLIGENCE ======= */
+.cadre-intelligence {
+    height: 6cm;
+    width: 3.7cm;
+    flex-shrink: 0;
+}
+.titre-intelligence {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: center;
+    margin-top: 1.5mm;
+    margin-bottom: 1.5mm;
+    cursor: pointer;
+    position: relative;
+}
+.titre-intelligence::after {
+    content: "";
+    position: absolute;
+    bottom: -0.2mm;
+    width: 0;
+    height: 1.5px;
+    background-color: #a98550;
+    transition: width 0.2s ease, left 0.2s ease;
+}
+.titre-intelligence:hover::after {
+    width: 3.2cm;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.conteneur-valeurs-intelligence {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10mm;
+    margin-top: 1mm;
+}
+.bloc-valeur-intelligence,
+.bloc-modificateur-intelligence {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1mm;
+}
+.cadre-valeur-intelligence,
+.cadre-modificateur-intelligence {
+    width: 1.2cm;
+    height: 1.2cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 8px;
+    background-color: #f8f1e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.champ-valeur-intelligence,
+.champ-modificateur-intelligence {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #493c32;
+}
+.champ-valeur-intelligence:hover,
+.champ-modificateur-intelligence:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+}
+.champ-valeur-intelligence:focus,
+.champ-modificateur-intelligence:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+}
+.bloc-valeur-intelligence span,
+.bloc-modificateur-intelligence span {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #806746;
+}
+.conteneur-sauvegarde-intelligence {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 3.45cm;
+    height: 0.7cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 6px;
+    padding: 1mm 1mm;
+    margin: 1mm 1mm 0;
+    background-color: #f8f1e3;
+}
+.conteneur-sauvegarde-intelligence span {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #66513b;
+}
+.conteneur-sauvegarde-intelligence:hover {
+    border-color: #a98550;
+    box-shadow: 0 2px 5px rgba(73, 60, 50, 0.3);
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    cursor: pointer;
+}
+.cercle-sauvegarde-intelligence {
+    width: 0.35cm;
+    height: 0.35cm;
+    box-sizing: border-box;
+    border: 1.5px solid #a98550;
+    border-radius: 50%;
+    background-color: #f8f1e3;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.cercle-sauvegarde-intelligence:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.cercle-sauvegarde-intelligence.maitrise {
+    background-color: #b8860b;
+    border-color: #b8860b;
+}
+.conteneur-competences-intelligence {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 3.45cm;
+    height: 2.5cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 6px;
+    padding: 1mm;
+    margin: 2mm 1mm 0;
+    background-color: #f8f1e3;
+}
+.conteneur-competences-intelligence span {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #66513b;
+    font-weight: bold;
+}
+.ligne-competence-intelligence span {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 14px;
+    line-height: 14px;
+    cursor: pointer;
+}
+.ligne-competence-intelligence span::after {
+    content: "";
+    position: absolute;
+    bottom: -0.1px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: #a98550;
+    transition: width 0.2s ease, left 0.2s ease;
+}
+.ligne-competence-intelligence span:hover::after {
+    width: 100%;
+    left: 0;
+}
+.conteneur-competences-intelligence:hover {
+    border-color: #a98550;
+    box-shadow: 0 2px 5px rgba(73, 60, 50, 0.3);
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+}
+.ligne-competence-intelligence {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.cercle-competence-intelligence {
+    width: 0.35cm;
+    height: 0.35cm;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border: 1.5px solid #a98550;
+    border-radius: 50%;
+    background-color: #f8f1e3;
+    padding: 0;
+    cursor: pointer;
+}
+.cercle-competence-intelligence:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.cercle-competence-intelligence.maitrise {
+    background-color: #b8860b;
+    border-color: #b8860b;
+}
+.cercle-competence-intelligence.maitrise:hover {
+    background: #b8860b;
+    border-color: #b8860b;
+    box-shadow: 0 0 3px rgba(184, 134, 11, 0.4);
+}
+.cercle-competence-intelligence.expertise,
+.cercle-competence-intelligence.expertise:hover {
+    background: #b8860b;
+    border: 1.5px solid #b8860b;
+    box-shadow:
+        inset 0 0 0 2px #f8f1e3,
+        0 0 3px rgba(184, 134, 11, 0.5);
+}
+/* =======  SAGESSE ======= */
+/* =======  SAGESSE ======= */
+.cadre-sagesse {
+    height: 6cm;
+    width: 3.7cm;
+    flex-shrink: 0;
+}
+.titre-sagesse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: center;
+    margin-top: 1.5mm;
+    margin-bottom: 1.5mm;
+    cursor: pointer;
+    position: relative;
+}
+.titre-sagesse::after {
+    content: "";
+    position: absolute;
+    bottom: -0.1mm;
+    width: 0;
+    height: 1.5px;
+    background-color: #a98550;
+    transition: width 0.2s ease, left 0.2s ease;
+}
+.titre-sagesse:hover::after {
+    width: 2cm;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.conteneur-valeurs-sagesse {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10mm;
+    margin-top: 1mm;
+}
+.bloc-valeur-sagesse,
+.bloc-modificateur-sagesse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1mm;
+}
+.cadre-valeur-sagesse,
+.cadre-modificateur-sagesse {
+    width: 1.2cm;
+    height: 1.2cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 8px;
+    background-color: #f8f1e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.champ-valeur-sagesse,
+.champ-modificateur-sagesse {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #493c32;
+}
+.champ-valeur-sagesse:hover,
+.champ-modificateur-sagesse:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+}
+.champ-valeur-sagesse:focus,
+.champ-modificateur-sagesse:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+}
+.bloc-valeur-sagesse span,
+.bloc-modificateur-sagesse span {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #806746;
+}
+.conteneur-sauvegarde-sagesse {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 3.45cm;
+    height: 0.7cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 6px;
+    padding: 1mm 1mm;
+    margin: 1mm 1mm 0;
+    background-color: #f8f1e3;
+}
+.conteneur-sauvegarde-sagesse span {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #66513b;
+}
+.conteneur-sauvegarde-sagesse:hover {
+    border-color: #a98550;
+    box-shadow: 0 2px 5px rgba(73, 60, 50, 0.3);
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    cursor: pointer;
+}
+.cercle-sauvegarde-sagesse {
+    width: 0.35cm;
+    height: 0.35cm;
+    box-sizing: border-box;
+    border: 1.5px solid #a98550;
+    border-radius: 50%;
+    background-color: #f8f1e3;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.cercle-sauvegarde-sagesse:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.cercle-sauvegarde-sagesse.maitrise {
+    background-color: #b8860b;
+    border-color: #b8860b;
+}
+.conteneur-competences-sagesse {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 3.45cm;
+    height: 2.5cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 6px;
+    padding: 1mm;
+    margin: 2mm 1mm 0;
+    background-color: #f8f1e3;
+}
+.conteneur-competences-sagesse span {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #66513b;
+    font-weight: bold;
+}
+.ligne-competence-sagesse span {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 14px;
+    line-height: 14px;
+    cursor: pointer;
+}
+.ligne-competence-sagesse span::after {
+    content: "";
+    position: absolute;
+    bottom: -0.1px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: #a98550;
+    transition: width 0.2s ease, left 0.2s ease;
+}
+.ligne-competence-sagesse span:hover::after {
+    width: 100%;
+    left: 0;
+}
+.conteneur-competences-sagesse:hover {
+    border-color: #a98550;
+    box-shadow: 0 2px 5px rgba(73, 60, 50, 0.3);
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+}
+.ligne-competence-sagesse {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.cercle-competence-sagesse {
+    width: 0.35cm;
+    height: 0.35cm;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border: 1.5px solid #a98550;
+    border-radius: 50%;
+    background-color: #f8f1e3;
+    padding: 0;
+    cursor: pointer;
+}
+.cercle-competence-sagesse:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.cercle-competence-sagesse.maitrise {
+    background-color: #b8860b;
+    border-color: #b8860b;
+}
+.cercle-competence-sagesse.maitrise:hover {
+    background: #b8860b;
+    border-color: #b8860b;
+    box-shadow: 0 0 3px rgba(184, 134, 11, 0.4);
+}
+.cercle-competence-sagesse.expertise,
+.cercle-competence-sagesse.expertise:hover {
+    background: #b8860b;
+    border: 1.5px solid #b8860b;
+    box-shadow:
+        inset 0 0 0 2px #f8f1e3,
+        0 0 3px rgba(184, 134, 11, 0.5);
+}
+/* =======  CHARISME ======= */
+/* =======  CHARISME ======= */
+.cadre-charisme {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    flex-shrink: 0;
+    height: 3.4cm;
+    width: 7.5cm;
+    box-sizing: border-box;
+}
+.colonne-gauche-charisme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.colonne-droite-charisme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.titre-charisme {
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: center;
+    margin-top: 1.5mm;
+    margin-bottom: 1.5mm;
+    cursor: pointer;
+    position: relative;
+}
+.titre-charisme::after {
+    content: "";
+    position: absolute;
+    bottom: -0.1mm;
+    width: 0;
+    height: 1.5px;
+    background-color: #a98550;
+    transition: width 0.2s ease, left 0.2s ease;
+}
+.titre-charisme:hover::after {
+    width: 3cm;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.conteneur-valeurs-charisme {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10mm;
+    margin-top: 0mm;
+}
+.bloc-valeur-charisme,
+.bloc-modificateur-charisme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1mm;
+}
+.cadre-valeur-charisme,
+.cadre-modificateur-charisme {
+    width: 1.2cm;
+    height: 1.2cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 8px;
+    background-color: #f8f1e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.champ-valeur-charisme,
+.champ-modificateur-charisme {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #493c32;
+}
+.champ-valeur-charisme:hover,
+.champ-modificateur-charisme:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+}
+.champ-valeur-charisme:focus,
+.champ-modificateur-charisme:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+}
+.bloc-valeur-charisme span,
+.bloc-modificateur-charisme span {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #806746;
+}
+.conteneur-sauvegarde-charisme {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 3.45cm;
+    height: 0.7cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 6px;
+    padding: 1mm 1mm;
+    margin: 1mm 1mm 0;
+    background-color: #f8f1e3;
+}
+.conteneur-sauvegarde-charisme span {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #66513b;
+}
+.conteneur-sauvegarde-charisme:hover {
+    border-color: #a98550;
+    box-shadow: 0 2px 5px rgba(73, 60, 50, 0.3);
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    cursor: pointer;
+}
+.cercle-sauvegarde-charisme {
+    width: 0.35cm;
+    height: 0.35cm;
+    box-sizing: border-box;
+    border: 1.5px solid #a98550;
+    border-radius: 50%;
+    background-color: #f8f1e3;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.cercle-sauvegarde-charisme:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.cercle-sauvegarde-charisme.maitrise {
+    background-color: #b8860b;
+    border-color: #b8860b;
+}
+.conteneur-competences-charisme {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 3.45cm;
+    height: 2.4cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 6px;
+    padding: 1mm;
+    margin: 0mm 1mm 0;
+    background-color: #f8f1e3;
+}
+.conteneur-competences-charisme span {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #66513b;
+    font-weight: bold;
+}
+.ligne-competence-charisme span {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 14px;
+    line-height: 14px;
+    cursor: pointer;
+}
+.ligne-competence-charisme span::after {
+    content: "";
+    position: absolute;
+    bottom: -0.1px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: #a98550;
+    transition: width 0.2s ease, left 0.2s ease;
+}
+.ligne-competence-charisme span:hover::after {
+    width: 100%;
+    left: 0;
+}
+.conteneur-competences-charisme:hover {
+    border-color: #a98550;
+    box-shadow: 0 2px 5px rgba(73, 60, 50, 0.3);
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+}
+.ligne-competence-charisme {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.cercle-competence-charisme {
+    width: 0.35cm;
+    height: 0.35cm;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border: 1.5px solid #a98550;
+    border-radius: 50%;
+    background-color: #f8f1e3;
+    padding: 0;
+    cursor: pointer;
+}
+.cercle-competence-charisme:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.cercle-competence-charisme.maitrise {
+    background-color: #b8860b;
+    border-color: #b8860b;
+}
+.cercle-competence-charisme.maitrise:hover {
+    background: #b8860b;
+    border-color: #b8860b;
+    box-shadow: 0 0 3px rgba(184, 134, 11, 0.4);
+}
+.cercle-competence-charisme.expertise,
+.cercle-competence-charisme.expertise:hover {
+    background: #b8860b;
+    border: 1.5px solid #b8860b;
+    box-shadow:
+        inset 0 0 0 2px #f8f1e3,
+        0 0 3px rgba(184, 134, 11, 0.5);
+}
+/* =======  COMMUN ======= */
+/* =======  COMMUN ======= */
+/* Conservation de la couleur dorée au survol lorsque maîtrisé */
+[class*="cercle-sauvegarde-"].maitrise:hover {
+    background: #b8860b;
+    border-color: #b8860b;
+    box-shadow: 0 0 3px rgba(184, 134, 11, 0.4);
+}
+
+
+/* =======  Sous-zone 4 :  Bonus Combat & Incantation, Points de Mana, Dés de mana, Jets de sauv. des sorts, Initiative, Vitesse, Percpetion Passive, Repos ======= */
+/* =======  Sous-zone 4 :  Bonus Combat & Incantation, Points de Mana, Dés de mana, Jets de sauv. des sorts, Initiative, Vitesse, Percpetion Passive, Repos ======= */
+/* =======  Sous-zone 4 :  Bonus Combat & Incantation, Points de Mana, Dés de mana, Jets de sauv. des sorts, Initiative, Vitesse, Percpetion Passive, Repos ======= */
+.colonne-droite {
+    width: 12.9cm;
+    height: 16.8cm;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2mm;
+    gap: 1mm;
+}
+.colonne-droite-superieure {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 1mm;
+    width: 12.9cm;
+    height: 5cm;
+    box-sizing: border-box;
+}
+.partie-gauche-superieure {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-rows: auto auto;
+    gap: 1mm;
+    box-sizing: border-box;
+}
+.partie-droite-superieure {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 1mm; /* Espace horizontal */
+    row-gap: 1mm;      /* Espace vertical */
+    box-sizing: border-box;
+    grid-template-rows: 1.7cm 1.4cm 1.3cm;
+}
+.cadre-bonus-combat,
+.cadre-bonus-incantation,
+.cadre-points-mana,
+.cadre-des-mana,
+.cadre-sauvegarde-sorts,
+.cadre-vitesse,
+.cadre-perception-passive {
+    box-sizing: border-box;
+    border: 1px solid #d9c7a5;
+    border-radius: 10px;
+    background: linear-gradient(
+        145deg,
+        #f3ead8,
+        #e8dfca
+    );
+}
+/* =======  Bonus de Combat ======= */
+/* =======  Bonus de Combat ======= */
+.cadre-bonus-combat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1mm;
+    box-sizing: border-box;
+}
+.titre-bonus-combat {
+    font-family: Georgia, serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: center;
+}
+.conteneur-bonus-combat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1mm;
+    width: 100%;
+    flex: 1;
+}
+.colonne-caracteristiques-combat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5mm;
+}
+.bouton-force-combat,
+.bouton-dexterite-combat {
+    width: 1cm;
+    height: 0.5cm;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #493c32;
+    background-color: #f8f1e3;
+    border: 1px solid #c4ad85;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.colonne-valeur-combat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.champ-bonus-combat {
+    width: 1.2cm;
+    height: 1.2cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 8px;
+    outline: none;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    color: #493c32;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+.champ-bonus-combat:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+}
+.champ-bonus-combat:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+    border-color: #a98550;
+}
+/* =======  Bonus d'Incantation ======= */
+/* =======  Bonus d'Incantation ======= */
+.cadre-bonus-incantation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1mm;
+    box-sizing: border-box;
+}
+.titre-bonus-incantation {
+    font-family: Georgia, serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: center;
+}
+.bouton-intelligence-incantation,
+.bouton-sagesse-incantation,
+.bouton-charisme-incantation {
+    width: 1cm;
+    height: 0.5cm;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #493c32;
+    background-color: #f8f1e3;
+    border: 1px solid #c4ad85;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.conteneur-bonus-incantation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1mm;
+    width: 100%;
+    flex: 1;
+}
+.colonne-caracteristiques-incantation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5mm;
+}
+.colonne-valeur-incantation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.champ-bonus-incantation {
+    width: 1.2cm;
+    height: 1.2cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 8px;
+    outline: none;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    color: #493c32;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+.champ-bonus-incantation:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+}
+.champ-bonus-incantation:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+    border-color: #a98550;
+}
+.bouton-force-combat.actif,
+.bouton-dexterite-combat.actif,
+.bouton-intelligence-incantation.actif,
+.bouton-sagesse-incantation.actif,
+.bouton-charisme-incantation.actif {
+    background: linear-gradient(145deg, #d4af67, #b8860b);
+    color: #756a6a;
+    border-color: #a98550;
+}
+/* =======  Barres de mana ======= */
+/* =======  Barres de mana ======= */
+.cadre-points-mana {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    height: 2.3cm;
+    box-sizing: border-box;
+    border: 1px solid #d9c7a5;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5mm;
+    gap: 1mm;
+    background-color: #f8f1e3;
+}
+.ligne-superieure-mana {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 1mm;
+}
+.titre-points-mana {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #493c32;
+}
+.ligne-inferieure-mana {
+    display: flex;
+    align-items: stretch;
+    gap: 3mm;
+    flex: 1;
+    min-height: 0;
+}
+.cadre-mana-principaux {
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
+    border: 0.5px solid #d9c7a5;
+    border-radius: 10px;
+    background-color: #f8f1e3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cadre-mana-principaux:focus-within {
+    border-color: #a98550;
+    box-shadow: 0 0 3px rgba(169, 133, 80, 0.3);
+}
+.cadre-mana-principaux:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.valeurs-mana {
+    display: grid;
+    height: 1cm;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: -2mm;
+    margin-top: -1mm;
+}
+.valeur-mana-actuelle,
+.valeur-mana-max {
+    width: 80%;
+    min-width: 0;
+    justify-self: center;
+    height: 0.8cm;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    box-sizing: border-box;
+    color: #493c32;
+}
+.valeur-mana-actuelle:hover,
+.valeur-mana-max:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 10px;
+}
+.valeur-mana-actuelle:focus,
+.valeur-mana-max:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 10px;
+}
+.valeurs-mana span {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #493c32;
+}
+.barre-mana {
+    width: 92%;
+    height: 6px;
+    background-color: #D8C6A5;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-left: 7px;
+}
+.remplissage-mana {
+    width: 100%;
+    height: 100%;
+    background-color: #4472C4;
+    border-radius: 20px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+.libelles-mana {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #493c32;
+}
+.libelles-mana span:first-child {
+    grid-column: 1;
+}
+.libelles-mana span:last-child {
+    grid-column: 3;
+}
+.cadre-gestion-mana {
+    position: relative;
+    width: 1.3cm;
+    height: 1cm;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid #d9c7a5;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.cadre-gestion-mana:focus-within {
+    border-color: #d9c7a5;
+    box-shadow: 0 0 3px rgba(169, 133, 80, 0.3);
+}
+.cadre-gestion-mana:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #d9c7a5;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.ligne-boutons-mana {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding:  0mm 0mm;
+    box-sizing: border-box;
+    transform: translateY(9.5mm);
+}
+.bouton-mana-moins,
+.bouton-mana-plus {
+    width: 5mm;
+    height: 5mm;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: 900;
+    border: 0.5px solid #d9c7a5;
+    border-radius: 2px;
+    background-color: #f8f1e3;
+    cursor: pointer;
+}
+.bouton-mana-plus {
+    color: #002060;
+}
+.bouton-mana-moins {
+    color: #002060;
+}
+.bouton-mana-moins:hover,
+.bouton-mana-plus:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.valeur-mana-gestion {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transform: translateY(0mm);
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #493c32;
+}
+.valeur-mana-gestion:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 10px;
+    width: 90%;
+    height: 85%;
+}
+.valeur-mana-gestion:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 10px;
+}
+/* =======  Dés de Mana ======= */
+/* =======  Dés de Mana ======= */
+.cadre-des-mana {
+    grid-column: 1 / 4;
+    grid-row: 1;
+    width: 4cm;
+    height: 1.7cm;
+    padding: 1mm;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1mm;
+    border: 1px solid #d9c7a5;
+    border-radius: 10px;
+    background-color: #f8f1e3;
+}
+.titre-des-mana {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #493c32;
+}
+.ligne-faces-des-mana {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #493c32;
+}
+.nombre-faces-des-mana {
+    width: 4.2mm;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #493c32;
+    box-sizing: border-box;
+}
+.nombre-faces-des-mana:hover,
+.nombre-faces-des-mana:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 4px;
+}
+.valeurs-des-mana {
+    width: 2.4cm;
+    height: 1.2cm;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d9c7a5;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+}
+.valeurs-des-mana:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.valeur-des-mana-actuelle,
+.valeur-des-mana-max {
+    width: 40%;
+    height: 100%;
+    min-width: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #493c32;
+    box-sizing: border-box;
+}
+.separateur-de-mana {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #493c32;
+}
+.valeur-des-mana-actuelle:hover,
+.valeur-des-mana-max:hover,
+.valeur-des-mana-actuelle:focus,
+.valeur-des-mana-max:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 4px;
+}
+/* =======  Jet de sauvegarde ======= */
+/* =======  Jet de sauvegarde ======= */
+.cadre-sauvegarde-sorts {
+    grid-column: 4 / 7;
+    grid-row: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 1mm;
+    height: 1.7cm;
+}
+.titre-sauvegarde-sorts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: center;
+    line-height: 1.1;
+}
+.valeur-sauvegarde-sorts {
+    width: 1.2cm;
+    height: 1.2cm;
+    box-sizing: border-box;
+    border: 1px solid #c4ad85;
+    border-radius: 8px;
+    outline: none;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    color: #493c32;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+.valeur-sauvegarde-sorts:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+}
+.valeur-sauvegarde-sorts:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 6px;
+    border-color: #a98550;
+}
+/* ======= Initiative, Vitesse et Perception passive ======= */
+/* ======= Initiative, Vitesse et Perception passive ======= */
+.ligne-caracteristiques-secondaires {
+    grid-column: 1 / 7;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2mm;
+}
+.cadre-initiative,
+.cadre-vitesse,
+.cadre-perception-passive {
+    width: 2cm;
+    height: 1.4cm;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    border: 1px solid #d9c7a5;
+    border-radius: 10px;
+    padding: 0mm;
+    background-color: #f8f1e3;
+}
+.cadre-initiative{
+background: linear-gradient(145deg, #fffaf0, #eee2ca);
+}
+.cadre-initiative:hover{
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+    cursor: pointer;
+}
+.valeur-initiative,
+.valeur-vitesse,
+.valeur-perception-passive {
+    width: 90%;
+    height: 7mm;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #493c32;
+}
+.valeur-initiative:hover,
+.valeur-vitesse:hover,
+.valeur-perception-passive:hover,
+.valeur-initiative:focus,
+.valeur-vitesse:focus,
+.valeur-perception-passive:focus {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-radius: 4px;
+}
+.titre-initiative,
+.titre-vitesse,
+.titre-perception-passive {
+    height: 8mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1;
+}
+/* ======= Repos court & long ======= */
+/* ======= Repos court & long ======= */
+.cadre-repos-court {
+    grid-column: 2 / 3;
+    grid-row: 3;
+}
+.cadre-repos-long {
+    grid-column: 4 / 5;
+    grid-row: 3;
+}
+.cadre-repos-court,
+.cadre-repos-long {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.3cm;
+    min-width: 0;
+    box-sizing: border-box;
+}
+.bouton-repos-court,
+.bouton-repos-long {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 2.5cm;
+    height: 1.3cm;
+    box-sizing: border-box;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #493c32;
+    border: 1px solid #d9c7a5;
+    border-radius: 10px;
+    cursor: pointer;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+}
+.bouton-repos-court:hover,
+.bouton-repos-long:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a98550;
+    box-shadow: 0 1px 3px rgba(73, 60, 50, 0.2);
+}
+.bouton-repos-court:active,
+.bouton-repos-long:active {
+    background: linear-gradient(145deg, #eee2ca, #e5d5b9);
+}
+
+/* ==================================== */
+/* Zone Centrale : Partie de droite inférieure */ 
+/* ==================================== */
+.colonne-techniques-sorts {
+    display: flex;
+    flex-direction: column;
+    gap: 1mm;
+    width: 100%;
+}
+/* ==================================== */
+/* ZONE CENTRALE : BLOC TECHNIQUES      */
+/* AFFICHAGE DIRECT SUR LA FICHE        */
+/* ==================================== */
+.bloc-techniques {
+    width: 100%;
+    min-height: 0;
+    height: 5.8cm;
+    box-sizing: border-box;
+    border: 1px solid #d9c7a5;
+    border-radius: 10px;
+    background: linear-gradient(
+        145deg,
+        #f3ead8,
+        #e8dfca
+    );
+    overflow: hidden;
+}
+.tableau-techniques {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    font-family: Georgia, serif;
+}
+.tableau-techniques th {
+    height: 6mm;
+    box-sizing: border-box;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: left;
+    vertical-align: middle;
+    padding: 1mm;
+    background: #dfd0b2;
+}
+.tableau-techniques th.entete-centree {
+    text-align: center;
+}
+.tableau-techniques th:first-child {
+    padding-left: 3mm;
+}
+.bouton-ajout-technique,
+.bouton-ordre-techniques {
+    border: none;
+    background: transparent;
+    padding: 0;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #806b50;
+    cursor: pointer;
+    transition: color 0.15s ease, transform 0.15s ease;
+}
+.bouton-ajout-technique {
+    margin-right: 3mm;
+}
+.bouton-ordre-techniques {
+    margin-left: 2mm;
+}
+.bouton-ajout-technique:hover,
+.bouton-ordre-techniques:hover {
+    color: #a98550;
+    transform: scale(1.1);
+}
+.conteneur-techniques {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 8mm);
+    min-height: 0;
+    overflow: hidden;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-sizing: border-box;
+    padding: 0.5mm 0.2mm 0mm 0mm;
+}
+.conteneur-lignes-techniques {
+    flex: 1;
+    min-height: 0;
+    margin: 0mm 0mm 0mm 1mm;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #c4ad85 transparent;
+}
+.conteneur-lignes-techniques::-webkit-scrollbar {
+    width: 3px;
+}
+.conteneur-lignes-techniques::-webkit-scrollbar-track {
+    background: transparent;
+}
+.conteneur-lignes-techniques::-webkit-scrollbar-thumb {
+    background: #c4ad85;
+    border-radius: 10px;
+}
+.conteneur-lignes-techniques::-webkit-scrollbar-thumb:hover {
+    background: #a98550;
+}
+.conteneur-lignes-techniques .tableau-corps-techniques {
+    width: calc(100% - 0.5mm);
+}
+.tableau-corps-techniques {
+    width: 100%;
+    border-spacing: 0 0.3mm;
+}
+.tableau-techniques tbody {
+    position: relative;
+}
+.tableau-techniques tbody tr {
+    outline: none;
+}
+.tableau-corps-techniques tr {
+    break-inside: avoid;
+    scroll-margin-block: 2mm;
+}
+.tableau-corps-techniques td {
+    position: relative;
+    overflow: hidden;
+    padding: 0.5mm;
+    border-top: 1px solid #d9c7a5;
+    border-bottom: 1px solid #d9c7a5;
+    border-left: none;
+    border-right: none;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #493c32;
+    vertical-align: middle;
+    background: #fffaf0;
+}
+.tableau-corps-techniques td:first-child {
+    border-left: 1px solid #d9c7a5;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-left: 3mm;
+}
+.tableau-corps-techniques td:last-child {
+    border-right: 1px solid #d9c7a5;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-left: 2.5mm;
+}
+.tableau-corps-techniques td:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 10%;
+    bottom: 10%;
+    height: 80%;
+    width: 0.8px;
+    background-color: #d9c7a5;
+}
+.tableau-corps-techniques tbody tr:hover td {
+    background: #f3ead8;
+    transition: background 0.15s ease;
+}
+.tableau-techniques td.cellule-centree {
+    text-align: center;
+}
+.nom-technique {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 10px;
+    color: #493c32;
+}
+.type-technique {
+    font-family: Georgia, serif;
+    font-size: 9px;
+    font-weight: normal;
+    color: #806b50;
+}
+.bouton-hit-dc,
+.bouton-degats-soins,
+.bouton-edition-technique,
+.bouton-statut  {
+    border: none;
+    background: transparent;
+    padding: 0;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #493c32;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+.bouton-hit-dc:hover,
+.bouton-degats-soins:hover,
+.bouton-edition-technique:hover,
+.bouton-statut:hover  {
+    color: #a98550;
+}
+.element-degat {
+    display: block;
+    text-align: center;
+    margin: 1mm 0;
+}
+
+.element-hit-dc {
+    display: block;
+    text-align: center;
+    margin: 1mm 0;
+}
+
+.icone-statut {
+    width: 4mm;
+    height: 4mm;
+    object-fit: contain;
+    vertical-align: middle;
+}
+/* ==================================== */
+/* FENÊTRE DE CRÉATION / MODIFICATION   */
+/* ==================================== */
+#fenetre-technique {
+    width: 700px;
+    max-width: 900px;
+    max-height: 85vh;
+    padding: 4mm 2mm 2mm 2mm;
+    background: #f8f1e3;
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 12px;
+    font-family: Georgia, serif;
+    font-size: 9px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    box-shadow: 0 5px 20px rgba(73, 60, 50, 0.3);
+}
+#fenetre-technique::backdrop {
+    background: rgba(45, 42, 37, 0.45);
+}
+#titre-fenetre-technique {
+    margin: 0 0 3mm 0;
+    padding-bottom: 2mm;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: center;
+    border-bottom: 1px solid #c4ad85;
+}
+#fenetre-technique input,
+#fenetre-technique select {
+    padding: 2px 4px;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+}
+#fenetre-technique input:hover,
+#fenetre-technique select:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-color: #a98550;
+}
+#fenetre-technique input:focus,
+#fenetre-technique select:focus {
+    outline: none;
+    border-color: #a98550;
+    box-shadow: 0 0 3px rgba(169, 133, 80, 0.4);
+}
+#fenetre-technique textarea {
+    padding: 2mm;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    font-size: 9px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+#fenetre-technique textarea:focus {
+    outline: none;
+    border-color: #a98550;
+    box-shadow: 0 0 3px rgba(169, 133, 80, 0.4);
+}
+#fenetre-technique button {
+    padding: 3px 7px;
+    background: linear-gradient(145deg, #f3ead8, #e8dfca);
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+#fenetre-technique button:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-color: #a98550;
+}
+#bouton-annuler-technique {
+    background: #eee2ca;
+    border-color: #c4ad85;
+}
+#bouton-annuler-technique:hover {
+    background: #e5d5b8;
+}
+#bouton-valider-technique {
+    background: linear-gradient(145deg, #b89a68, #a98550);
+    color: #fffaf0;
+    border-color: #92703f;
+    font-weight: bold;
+}
+#bouton-valider-technique:hover {
+    background: linear-gradient(145deg, #c4a878, #b18c55);
+    border-color: #80613a;
+}
+#fenetre-technique label {
+    font-family: Georgia, serif;
+    font-size: 9px;
+    font-weight: bold;
+    color: #66513b;
+}
+.formulaire-informations-technique {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 3mm 2mm;
+    align-items: center;
+}
+.champ-technique {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 2mm;
+    min-width: 0;
+}
+.champ-technique label {
+    font-weight: bold;
+    white-space: nowrap;
+}
+.champ-technique input,
+.champ-technique select {
+    width: 100%;
+    height: 14px;
+    min-width: 0;
+    box-sizing: border-box;
+    font-family: Georgia, serif;
+}
+.champ-nom {
+    grid-column: 1 / 4;
+    grid-row: 1;
+}
+.champ-type {
+    grid-column: 4 / 7;
+    grid-row: 1;
+}
+.champ-portee {
+    grid-column: 7 / 9;
+    grid-row: 1;
+}
+.champ-taille-zone {
+    grid-column: 9 / 13;
+    grid-row: 1;
+}
+.champ-incantation {
+    grid-column: 1 / 5;
+    grid-row: 2;
+}
+.champ-duree {
+    grid-column: 5 / 9;
+    grid-row: 2;
+}
+.champ-forme-zone {
+    grid-column: 9 / 13;
+    grid-row: 2;
+}
+#taille-zone-effet::-webkit-inner-spin-button,
+#taille-zone-effet::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#taille-zone-effet {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+.bloc-hit-dc {
+    display: grid;
+    grid-template-columns: 1.1fr 2.5fr 1.2fr 1.2fr 1fr;
+    row-gap: 1mm;
+    column-gap: 2mm;
+    align-items: center;
+    padding: 2mm;
+    margin-top: 2mm;
+    background: linear-gradient(145deg, #f3ead8, #e8dfca);
+    border: 1px solid #c4ad85;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+.champ-hit-dc {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 1.5mm;
+    min-width: 0;
+}
+.champ-hit-dc label {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 8px;
+    color: #66513b;
+}
+.champ-hit-dc input,
+.champ-hit-dc select {
+    width: 100%;
+    height: 14px;
+    min-width: 0;
+    box-sizing: border-box;
+    font-family: Georgia, serif;
+    font-size: 8px;
+}
+.champ-mode {
+    grid-column: 1;
+}
+.champ-caracteristique {
+    grid-column: 2;
+}
+.champ-bonus {
+    grid-column: 3;
+}
+.champ-surplus {
+    grid-column: 4;
+}
+.champ-total {
+    grid-column: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1mm;
+    padding: 1mm;
+    background: rgba(185, 154, 104, 0.15);
+    border: 1px solid #c4ad85;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 9px;
+    color: #493c32;
+}
+.surplus-hit-dc::-webkit-inner-spin-button,
+.surplus-hit-dc::-webkit-outer-spin-button,
+.bonus-hit-dc::-webkit-outer-spin-button,
+.bonus-hit-dc::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.surplus-hit-dc,
+.bonus-hit-dc {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+.conteneur-degats-soins {
+    grid-column: 1 / -1;
+}
+.bloc-hit-dc .bouton-ajouter-degat {
+    grid-column: 2 / 3;
+    grid-row: 3;
+}
+.bloc-hit-dc .bouton-supprimer-hit-dc {
+    grid-column: 4 / 5;
+    grid-row: 3;
+}
+#bouton-ajouter-hit-dc {
+    display: block;
+    margin: 2mm auto 1mm auto;
+    padding: 3px 10px;
+    background: linear-gradient(145deg, #f3ead8, #e8dfca);
+    color: #66513b;
+    border: 1px dashed #a98550;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+#bouton-ajouter-hit-dc:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-color: #80613a;
+}
+.bloc-degat-soin {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr 1.8fr 1.5fr 0.8fr auto;
+    gap: 2mm;
+    align-items: center;
+    padding: 2mm;
+    margin-top: 1.5mm;
+    background: rgba(255, 250, 240, 0.65);
+    border: 1px solid #d9c7a5;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+.titre-degat {
+    font-family: Georgia, serif;
+    font-size: 8px;
+    font-weight: bold;
+    color: #493c32;
+    white-space: nowrap;
+}
+.champ-degat {
+    display: flex;
+    align-items: center;
+    gap: 1.5mm;
+    min-width: 0;
+}
+.champ-degat label {
+    font-family: Georgia, serif;
+    font-size: 8px;
+    font-weight: bold;
+    color: #66513b;
+    white-space: nowrap;
+}
+.champ-degat input,
+.champ-degat select {
+    width: 100%;
+    height: 14px;
+    min-width: 0;
+    box-sizing: border-box;
+    font-family: Georgia, serif;
+    font-size: 8px;
+}
+.valeurs-des {
+    display: flex;
+    align-items: center;
+    gap: 1mm;
+    min-width: 0;
+}
+.valeurs-des input {
+    text-align: center;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    color: #493c32;
+}
+.nombre-des-degats::-webkit-inner-spin-button,
+.nombre-des-degats::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.nombre-des-degats {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+.faces-des-degats::-webkit-inner-spin-button,
+.faces-des-degats::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.faces-des-degats {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+.champ-seuil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1mm;
+    padding: 1mm;
+    background: rgba(185, 154, 104, 0.15);
+    border: 1px solid #d9c7a5;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    font-weight: bold;
+    color: #493c32;
+}
+.valeur-seuil {
+    white-space: nowrap;
+}
+.icone-type-degat {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+#conteneur-hit-dc .bouton-supprimer-degat {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #f3e1d8, #e8cfc2);
+    color: #874b3b;
+    border: 1px solid #c99c8b;
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+}
+#conteneur-hit-dc .bouton-supprimer-degat:hover {
+    background: linear-gradient(145deg, #f5d9ce, #e8bfb0);
+    border-color: #a66b58;
+}
+#conteneur-hit-dc .bouton-supprimer-hit-dc {
+    background: linear-gradient(145deg, #f3e1d8, #e8cfc2);
+    color: #874b3b;
+    border: 1px solid #c99c8b;
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#conteneur-hit-dc .bouton-supprimer-hit-dc:hover {
+    background: linear-gradient(145deg, #f5d9ce, #e8bfb0);
+    border-color: #a66b58;
+}
+#conteneur-hit-dc .bouton-ajouter-degat {
+    padding: 2px 7px;
+    background: linear-gradient(145deg, #f3ead8, #e8dfca);
+    color: #66513b;
+    border: 1px dashed #a98550;
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.bouton-ajouter-degat:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-color: #80613a;
+}
+.formulaire-description-technique {
+    display: flex;
+    flex-direction: column;
+    gap: 2mm;
+    margin-top: 3mm;
+}
+.formulaire-description-technique label {
+    font-weight: bold;
+}
+.formulaire-description-technique textarea {
+    width: 100%;
+    min-height: 35mm;
+    box-sizing: border-box;
+    padding: 3mm;
+    font-family: Georgia, serif;
+    font-size: 9px;
+    color: #493c32;
+    resize: vertical;
+}
+.boutons-fenetre-technique {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 3mm;
+    margin-top: 3mm;
+    padding-top: 2mm;
+    border-top: 1px solid #c4ad85;
+}
+/* ==================================== */
+/* MODE RÉORGANISATION                  */
+/* ==================================== */
+.bouton-ordre-techniques {
+    background-color: transparent;
+    color: #66513b;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    position: relative;
+    left: 0px;
+}
+.bouton-ordre-techniques:hover {
+    color: #a98550;
+    transform: scale(1.1);
+}
+.bouton-ordre-techniques.actif {
+    color: #a98550;
+}
+.bouton-ordre-techniques.actif:hover {
+    color: #80613a;
+}
+.ligne-technique {
+    cursor: default;
+}
+.ligne-en-deplacement {
+    opacity: 1;
+}
+.conteneur-techniques.mode-reorganisation .ligne-technique {
+    cursor: grab;
+    background-color: transparent;
+    transition: background-color 0.15s;
+}
+.conteneur-techniques.mode-reorganisation .ligne-technique:hover td {
+    background-color: #eee2ca;
+}
+.conteneur-techniques.mode-reorganisation .ligne-technique:active {
+    cursor: grabbing;
+}
+.conteneur-techniques.mode-reorganisation .conteneur-lignes-techniques {
+    outline: 2px dashed #a98550;
+    outline-offset: 0px;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.bloc-techniques.mode-reorganisation .conteneur-techniques {
+    height: calc(100% - 15.5mm);
+}
+.bloc-techniques > .zone-suppression {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    min-height: 25px;
+    flex-shrink: 0;
+    padding: 2px 0;
+    margin: 1.5px 0;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: #f3e1d8;
+    color: #874b3b;
+    border: 2px dashed #c99c8b;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 10px;
+}
+.bloc-techniques.mode-reorganisation .zone-suppression {
+    display: flex;
+}
+.bloc-techniques.mode-reorganisation > .zone-suppression.zone-suppression-active {
+    background-color: #e8cfc2;
+    border-color: #a66b58;
+    border-style: solid;
+}
+.ligne-emplacement-fantome {
+    height: 0;
+    visibility: collapse;
+}
+.ligne-emplacement-fantome td {
+    padding: 0;
+    border: none;
+    height: 0;
+}
+
+/* ============================================== */
+/* PARTIE 1 — BLOC DES SORTS                      */
+/* ============================================== */
+/* ==================================== */
+/* Conteneur principal */
+/* ==================================== */
+.bloc-sorts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 0;
+    height: 5.7cm;
+    box-sizing: border-box;
+    border: 1px solid #d9c7a5;
+    border-radius: 10px;
+    background: linear-gradient(
+        145deg,
+        #f3ead8,
+        #e8dfca
+    );
+    overflow: hidden;
+}
+.bloc-sorts > .tableau-sorts {
+    width: 100%;
+    margin-bottom: 0;
+}
+.tableau-sorts {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    font-family: Georgia, sans-serif;
+    margin-bottom: 0;
+}
+.tableau-sorts th {
+    height: 6mm;
+    box-sizing: border-box;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: left;
+    vertical-align: middle;
+    padding: 1mm;
+    background: #dfd0b2;
+}
+.tableau-sorts th.entete-centree {
+    text-align: center;
+}
+.tableau-sorts th:first-child {
+    padding-left: 3mm;
+}
+.bouton-ajout-sorts {
+    font-family: Georgia, serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #806b50;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.bouton-ajout-sorts:hover{
+    color: #a98550;
+    transform: scale(1.1);
+}
+.bouton-ajout-sorts {
+    margin-right: 3mm;
+}
+.bouton-ajout-sorts:hover{
+    color: #806b50;
+}
+.bouton-ordre-sorts {
+    background-color: transparent;
+    color: #66513b;
+    border: none;
+    font-family: Georgia, serif;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    position: relative;
+    left: 0;
+}
+.bouton-ordre-sorts:hover {
+    color: #a98550;
+    transform: scale(1.1);
+}
+.bouton-ordre-sorts.actif {
+    color: #a98550;
+}
+.bouton-ordre-sorts.actif:hover {
+    color: #80613a;
+}
+.conteneur-sorts {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 8.2mm);
+    min-height: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0.5mm 0.2mm 0.5mm 0;
+}
+.conteneur-lignes-sorts {
+    flex: 1;
+    min-height: 0;
+    margin: 0mm 0.5mm 0mm 1mm;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #b8a789 transparent;
+}
+.tableau-corps-sorts {
+    width: 100%;
+    border-spacing: 0 0.3mm;
+}
+.tableau-corps-sorts td {
+    position: relative;
+    overflow: hidden;
+    padding: 0.5mm;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #493c32;
+    background: #fffaf0;
+    border-top: 1px solid #d9c7a5;
+    border-bottom: 1px solid #d9c7a5;
+    border-left: none;
+    border-right: none;
+    vertical-align: middle;
+}
+.tableau-corps-sorts td:first-child {
+    border-left: 1px solid #d9c7a5;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.tableau-corps-sorts td:last-child {
+    border-right: 1px solid #d9c7a5;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.tableau-corps-sorts td:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 10%;
+    bottom: 10%;
+    height: 80%;
+    width: 0.8px;
+    background-color: #d9c7a5;
+}
+.tableau-sorts tbody {
+    position: relative;
+}
+.tableau-sorts tbody tr {
+    outline: none;
+}
+.tableau-corps-sorts tr {
+    break-inside: avoid;
+    scroll-margin-block: 2mm;
+}
+.tableau-corps-sorts tr:hover td {
+    background: #f3ead8;
+}
+.conteneur-lignes-sorts::-webkit-scrollbar {
+    width: 4px;
+}
+.conteneur-lignes-sorts::-webkit-scrollbar-track {
+    background: transparent;
+}
+.conteneur-lignes-sorts::-webkit-scrollbar-thumb {
+    background: #c4ad85;
+    border-radius: 10px;
+}
+.conteneur-lignes-sorts::-webkit-scrollbar-thumb:hover {
+    background: #a98550;
+}
+
+.tableau-sorts td.cellule-centree {
+    text-align: center;
+}
+.tableau-sorts td:first-child {
+    padding-left: 3mm;
+}
+.nom-sorts {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 10px;
+    color: #493c32;
+}
+.type-sorts {
+    font-family: Georgia, serif;
+    font-size: 9px;
+    font-weight: normal;
+    color: #806b50;
+}
+.bouton-hit-dc-sorts,
+.bouton-degats-soins-sorts,
+.bouton-effet-statut-sorts,
+.bouton-edition-sorts {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #493c32;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.bouton-hit-dc-sorts:hover,
+.bouton-degats-soins-sorts:hover,
+.bouton-effet-statut-sorts:hover,
+.bouton-edition-sorts:hover {
+    color: #a98550;
+}
+.bouton-effet-statut-sorts {
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 1mm;
+}
+/* ============================================== */
+/* PARTIE 2 — FENÊTRE DE CRÉATION / MODIFICATION  */
+/* ============================================== */
+#fenetre-sorts {
+    width: 700px;
+    max-width: 900px;
+    max-height: 85vh;
+    padding: 4mm 2mm 2mm 2mm;
+    background: #f8f1e3;
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 12px;
+    font-family: Georgia, serif;
+    font-size: 9px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    box-shadow: 0 5px 20px rgba(73, 60, 50, 0.3);
+}
+#fenetre-sorts::backdrop {
+    background: rgba(45, 42, 37, 0.45);
+}
+#titre-fenetre-sorts {
+    margin: 0 0 3mm 0;
+    padding-bottom: 2mm;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: center;
+    border-bottom: 1px solid #c4ad85;
+}
+#fenetre-sorts input,
+#fenetre-sorts select,
+#fenetre-sorts textarea {
+    padding: 2px 4px;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+}
+#fenetre-sorts input:hover,
+#fenetre-sorts select:hover,
+#fenetre-sorts textarea:hover {
+    border-color: #a88e65;
+}
+#fenetre-sorts input:focus,
+#fenetre-sorts select:focus,
+#fenetre-sorts textarea:focus {
+    outline: none;
+    border-color: #8b704b;
+    box-shadow: 0 0 3px rgba(139, 112, 75, 0.35);
+}
+#fenetre-sorts button {
+    background: linear-gradient(145deg, #fffaf0, #e8dcc5);
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+#fenetre-sorts button:hover {
+    background: linear-gradient(145deg, #fffdf7, #f3ead8);
+    border-color: #a88e65;
+}
+.formulaire-informations-sorts {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 3mm 2mm;
+    align-items: center;
+}
+.champ-sorts {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 2mm;
+    min-width: 0;
+}
+.champ-sorts label {
+    font-family: Georgia, serif;
+    font-size: 9px;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #66513b;
+}
+.champ-sorts input,
+.champ-sorts select {
+    width: 100%;
+    height: 14px;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 2px 4px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 4px;
+}
+.champ-sorts input:hover,
+.champ-sorts select:hover {
+    border-color: #a88e65;
+}
+.champ-sorts input:focus,
+.champ-sorts select:focus {
+    outline: none;
+    border-color: #8b704b;
+    box-shadow: 0 0 3px rgba(139, 112, 75, 0.35);
+}
+#taille-zone-effet-sorts::-webkit-inner-spin-button,
+#taille-zone-effet-sorts::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#taille-zone-effet-sorts {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+.champ-sorts.champ-nom {
+    grid-column: 1 / 4;
+    grid-row: 1;
+}
+.champ-sorts.champ-type {
+    grid-column: 4 / 7;
+    grid-row: 1;
+}
+.champ-sorts.champ-portee {
+    grid-column: 7 / 9;
+    grid-row: 1;
+}
+.champ-sorts.champ-mana {
+    grid-column: 9 / 13;
+    grid-row: 1;
+}
+.champ-sorts.champ-incantation {
+    grid-column: 1 / 5;
+    grid-row: 2;
+}
+.champ-sorts.champ-duree {
+    grid-column: 5 / 9;
+    grid-row: 2;
+}
+.champ-sorts.champ-taille-zone {
+    grid-column: 9 / 13;
+    grid-row: 2;
+}
+.champ-sorts.champ-forme-zone {
+    grid-column: 1 / 5;
+    grid-row: 3;
+}
+.champ-sorts.champ-verbale {
+    grid-column: 5;
+    grid-row: 3;
+}
+.champ-sorts.champ-somatique {
+    grid-column: 6;
+    grid-row: 3;
+}
+.champ-sorts.champ-materiel {
+    grid-column: 7;
+    grid-row: 3;
+}
+.champ-verbale button,
+.champ-somatique button,
+.champ-materiel button {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    font-family: Georgia, serif;
+    font-size: 9px;
+    font-weight: bold;
+    border: 1px solid #c4ad85;
+    border-radius: 5px;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    color: #493c32;
+    cursor: pointer;
+}
+#fenetre-sorts #bouton-verbale-sorts.actif,
+#fenetre-sorts #bouton-somatique-sorts.actif,
+#fenetre-sorts #bouton-materiel-sorts.actif {
+    background: linear-gradient(145deg, #d4af67, #b8860b);
+    color: #756a6a;
+    border-color: #a98550;
+}
+.champ-sorts.champ-composant {
+    grid-column: 1 / 7;
+    grid-row: 4;
+}
+#conteneur-hit-dc-sorts {
+    margin-top: 2mm;
+}
+#conteneur-hit-dc-sorts .bloc-hit-dc {
+    display: grid;
+    grid-template-columns: 1.1fr 2.5fr 1.2fr 1.2fr 1fr;
+    row-gap: 1mm;
+    column-gap: 2mm;
+    padding: 2mm;
+    margin-top: 2mm;
+    background: linear-gradient(145deg, #f3ead8, #e8dfca);
+    border: 1px solid #c4ad85;
+    border-radius: 8px;
+}
+#conteneur-hit-dc-sorts .champ-hit-dc {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 1.5mm;
+    min-width: 0;
+}
+#conteneur-hit-dc-sorts .champ-hit-dc label {
+    font-family: Georgia, serif;
+    font-size: 9px;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #66513b;
+}
+#conteneur-hit-dc-sorts .bloc-hit-dc input,
+#conteneur-hit-dc-sorts .bloc-hit-dc select {
+    width: 100%;
+    height: 14px;
+    min-width: 0;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 4px;
+}
+#conteneur-hit-dc-sorts .bloc-hit-dc input:hover,
+#conteneur-hit-dc-sorts .bloc-hit-dc select:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-color: #a98550;
+}
+#conteneur-hit-dc-sorts .bloc-hit-dc input:focus,
+#conteneur-hit-dc-sorts .bloc-hit-dc select:focus {
+    outline: none;
+    border-color: #a98550;
+    box-shadow: 0 0 3px rgba(169, 133, 80, 0.4);
+}
+#conteneur-hit-dc-sorts .champ-mode {
+    grid-column: 1;
+}
+#conteneur-hit-dc-sorts .champ-caracteristique {
+    grid-column: 2;
+}
+#conteneur-hit-dc-sorts .champ-bonus {
+    grid-column: 3;
+}
+#conteneur-hit-dc-sorts .champ-surplus {
+    grid-column: 4;
+}
+#conteneur-hit-dc-sorts .champ-total {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1mm;
+    padding: 1mm;
+    background: rgba(185, 154, 104, 0.15);
+    border: 1px solid #c4ad85;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    font-size: 9px;
+    font-weight: bold;
+    color: #493c32;
+}
+#conteneur-hit-dc-sorts .conteneur-degats-soins {
+    grid-column: 1 / -1;
+}
+#conteneur-hit-dc-sorts .bouton-ajouter-degat {
+    grid-column: 2 / 2;
+    grid-row: 3;
+}
+#conteneur-hit-dc-sorts .bouton-supprimer-hit-dc {
+    grid-column: 4 / 4;
+    grid-row: 3;
+}
+#conteneur-hit-dc-sorts .bouton-supprimer-hit-dc {
+    background: linear-gradient(145deg, #f3e1d8, #e8cfc2);
+    color: #874b3b;
+    height: 5mm;
+    border: 1px solid #c99c8b;
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#conteneur-hit-dc-sorts .bouton-supprimer-hit-dc:hover {
+    background: linear-gradient(145deg, #f5d9ce, #e8bfb0);
+    border-color: #a66b58;
+}
+#conteneur-hit-dc-sorts .bouton-ajouter-degat {
+    padding: 2px 7px;
+    background: linear-gradient(145deg, #f3ead8, #e8dfca);
+    color: #66513b;
+    border: 1px dashed #a98550;
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#conteneur-hit-dc-sorts .bouton-ajouter-degat:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-color: #80613a;
+}
+#bouton-ajouter-hit-dc-sorts {
+    display: block;
+    margin: 2mm auto 1mm;
+    padding: 3px 10px;
+    background: linear-gradient(145deg, #f3ead8, #e8dfca);
+    color: #66513b;
+    border: 1px solid #a98550;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#bouton-ajouter-hit-dc-sorts:hover {
+    background: linear-gradient(145deg, #ffffff, #fffaf0);
+    border-color: #80613a;
+}
+#conteneur-hit-dc-sorts .bloc-degat-soin {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr 1.8fr 1.5fr 0.8fr auto;
+    gap: 2mm;
+    padding: 2mm;
+    margin-top: 1.5mm;
+    background: rgba(255, 250, 240, 0.65);
+    border: 1px solid #d9c7a5;
+    border-radius: 6px;
+}
+#conteneur-hit-dc-sorts .titre-degat {
+    font-family: Georgia, serif;
+    font-size: 8px;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #66513b;
+}
+#conteneur-hit-dc-sorts .champ-degat {
+    display: flex;
+    align-items: center;
+    gap: 1.5mm;
+    min-width: 0;
+}
+#conteneur-hit-dc-sorts .champ-degat label {
+    font-family: Georgia, serif;
+    font-size: 9px;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #66513b;
+}
+#conteneur-hit-dc-sorts .bloc-degat-soin input,
+#conteneur-hit-dc-sorts .bloc-degat-soin select {
+    width: 100%;
+    height: 14px;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 2px 4px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 4px;
+}
+#conteneur-hit-dc-sorts .bloc-degat-soin input:hover,
+#conteneur-hit-dc-sorts .bloc-degat-soin select:hover {
+    border-color: #a88e65;
+}
+#conteneur-hit-dc-sorts .bloc-degat-soin input:focus,
+#conteneur-hit-dc-sorts .bloc-degat-soin select:focus {
+    outline: none;
+    border-color: #8b704b;
+    box-shadow: 0 0 3px rgba(139, 112, 75, 0.35);
+}
+#conteneur-hit-dc-sorts .valeurs-des {
+    display: flex;
+    align-items: center;
+    gap: 1mm;
+    min-width: 0;
+}
+#conteneur-hit-dc-sorts .valeurs-des input {
+    text-align: center;
+}
+#conteneur-hit-dc-sorts .nombre-des-degats::-webkit-inner-spin-button,
+#conteneur-hit-dc-sorts .nombre-des-degats::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#conteneur-hit-dc-sorts .nombre-des-degats {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+#conteneur-hit-dc-sorts .faces-des-degats::-webkit-inner-spin-button,
+#conteneur-hit-dc-sorts .faces-des-degats::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#conteneur-hit-dc-sorts .faces-des-degats {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+#conteneur-hit-dc-sorts .champ-seuil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1mm;
+    padding: 1mm;
+    background: rgba(185, 154, 104, 0.15);
+    border: 1px solid #d9c7a5;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    font-weight: bold;
+    color: #493c32;
+}
+#conteneur-hit-dc-sorts .valeur-seuil {
+    white-space: nowrap;
+}
+#conteneur-hit-dc-sorts .bouton-supprimer-degat {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #f3e1d8, #e8cfc2);
+    color: #874b3b;
+    border: 1px solid #c99c8b;
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+}
+#conteneur-hit-dc-sorts .bouton-supprimer-degat:hover {
+    background: linear-gradient(145deg, #f5d9ce, #e8bfb0);
+    border-color: #a66b58;
+}
+#conteneur-hit-dc-sorts .icone-type-degat {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+.formulaire-description-sorts {
+    display: flex;
+    flex-direction: column;
+    gap: 2mm;
+    margin-top: 3mm;
+}
+.formulaire-description-sorts label {
+    font-family: Georgia, serif;
+    font-size: 9px;
+    font-weight: bold;
+    color: #66513b;
+}
+.formulaire-description-sorts textarea {
+    width: 100%;
+    min-height: 35mm;
+    box-sizing: border-box;
+    padding: 3mm;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    color: #493c32;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border: 1px solid #c4ad85;
+    border-radius: 6px;
+    resize: vertical;
+}
+.formulaire-description-sorts textarea:hover {
+    border-color: #a88e65;
+}
+.formulaire-description-sorts textarea:focus {
+    outline: none;
+    border-color: #8b704b;
+    box-shadow: 0 0 3px rgba(139, 112, 75, 0.35);
+}
+.boutons-fenetre-sorts {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 3mm;
+    margin-top: 3mm;
+    padding-top: 2mm;
+    border-top: 1px solid #c4ad85;
+}
+#bouton-annuler-sorts {
+    background: #eee2ca;
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    padding: 3px 7px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#bouton-annuler-sorts:hover {
+    background: #e5d5b8;
+    border-color: #a98550;
+}
+#bouton-valider-sorts {
+    background: linear-gradient(145deg, #b89a68, #a98550);
+    color: #fffaf0;
+    border: 1px solid #92703f;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    font-weight: bold;
+    padding: 3px 7px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#bouton-valider-sorts:hover {
+    background: linear-gradient(145deg, #c4a878, #b18c55);
+    border-color: #80613a;
+}
+/* ============================================== */
+/* PARTIE 3 — RÉORGANISATION ET SUPPRESSION       */
+/* ============================================== */
+.ligne-sorts {
+    cursor: default;
+}
+.ligne-en-deplacement {
+    opacity: 1;
+}
+.conteneur-sorts.mode-reorganisation .conteneur-lignes-sorts {
+    outline: 2px dashed #a98550;
+    outline-offset: 0;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.conteneur-sorts.mode-reorganisation .ligne-sorts {
+    cursor: grab;
+    background-color: transparent;
+    transition: background-color 0.15s;
+}
+.conteneur-sorts.mode-reorganisation .ligne-sorts:hover td {
+    background-color: #eee2ca;
+}
+.conteneur-sorts.mode-reorganisation .ligne-sorts:active {
+    cursor: grabbing;
+}
+.ligne-en-deplacement {
+    opacity: 1;
+}
+.bloc-sorts > .zone-suppression {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    min-height: 25px;
+    flex-shrink: 0;
+    padding: 2px 0;
+    margin: 1.5px 0;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: #f3e1d8;
+    color: #874b3b;
+    border: 2px dashed #c99c8b;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 10px;
+}
+.bloc-sorts.mode-reorganisation .conteneur-sorts {
+    height: calc(100% - 15.5mm);
+}
+.bloc-sorts.mode-reorganisation .zone-suppression {
+    display: flex;
+}
+.bloc-sorts.mode-reorganisation > .zone-suppression.zone-suppression-active {
+    background-color: #e8cfc2;
+    border-color: #a66b58;
+    border-style: solid;
+}
+.ligne-emplacement-fantome {
+    height: 0;
+    visibility: collapse;
+}
+.ligne-emplacement-fantome td {
+    padding: 0;
+    border: none;
+    height: 0;
+}
+
+
+/* ============================= */
+/* Zone Inférieure */
+/* ============================= */
+.zone-inferieure {
+    width: 20.6cm;
+    min-height: 9cm;
+    display: grid;
+    grid-template-columns: 6.6cm 1.4cm 1fr;
+    gap: 1mm;
+    align-items: stretch;
+}
+/* ================================================== */
+/* ZONE INFÉRIEURE : ÉQUIPEMENT ET INVENTAIRE         */
+/* ================================================== */
+/* ================================================== */
+/* STRUCTURE GÉNÉRALE                               */
+/* ================================================== */
+.colonne-equipement-inventaire {
+    display: flex;
+    flex-direction: column;
+    height: 9cm;
+    width: 6.6cm;
+    gap: 1.5mm;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.bloc-equipement,
+.bloc-inventaire {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-height: 0;
+    min-width: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 1px solid #d9c7a5;
+    border-radius: 10px;
+}
+.conteneur-lignes-equipement,
+.conteneur-lignes-inventaire {
+    flex: 1 1 0;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #c4ad85 transparent;
+    background: #f3ead8;
+}
+.conteneur-lignes-equipement::-webkit-scrollbar,
+.conteneur-lignes-inventaire::-webkit-scrollbar {
+    width: 4px;
+}
+.conteneur-lignes-equipement::-webkit-scrollbar-track,
+.conteneur-lignes-inventaire::-webkit-scrollbar-track {
+    background: transparent;
+}
+.conteneur-lignes-equipement::-webkit-scrollbar-thumb,
+.conteneur-lignes-inventaire::-webkit-scrollbar-thumb {
+    background: #c4ad85;
+    border-radius: 10px;
+}
+.conteneur-lignes-equipement::-webkit-scrollbar-thumb:hover,
+.conteneur-lignes-inventaire::-webkit-scrollbar-thumb:hover {
+    background: #a98550;
+}
+.tableau-equipement,
+.tableau-inventaire {
+    width: 100%;
+    table-layout: fixed;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    background-color: #f4ead6;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.bloc-equipement > .tableau-equipement,
+.bloc-inventaire > .tableau-inventaire {
+    width: 100%;
+}
+.bloc-equipement > .conteneur-lignes-equipement .tableau-corps-equipement,
+.bloc-inventaire > .conteneur-lignes-inventaire .tableau-corps-inventaire {
+    width: calc(100% - 2mm);
+    margin: 0 auto;
+}
+.bloc-equipement > .tableau-equipement th:nth-child(n+2),
+.bloc-inventaire > .tableau-inventaire th:nth-child(n+2) {
+    text-indent: -4.5mm;
+}
+.tableau-equipement th,
+.tableau-inventaire th {
+    padding: 1mm;
+    text-align: center;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    font-size: 10px;
+}
+.tableau-equipement thead th,
+.tableau-inventaire thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #dfd0b2;
+    transform: translateZ(0);
+}
+.tableau-equipement td,
+.tableau-inventaire td {
+    border: 1px solid #d9c7a5;
+    padding: 1mm;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    color: #493c32;
+    background: #fffaf0;
+}
+.tableau-equipement tbody tr,
+.tableau-inventaire tbody tr {
+    height: 5mm;
+}
+.tableau-equipement td:first-child,
+.tableau-inventaire td:first-child {
+    text-align: left;
+}
+.tableau-equipement td:first-child {
+    padding-left: 1mm;
+}
+.tableau-corps-equipement,
+.tableau-corps-inventaire {
+    border-spacing: 0 0.5mm;
+    margin: 0 auto;
+}
+.tableau-corps-equipement td,
+.tableau-corps-inventaire td {
+    border: 1px solid #d9c7a5;
+    border-left: none;
+    border-right: none;
+}
+.tableau-corps-equipement td,
+.tableau-corps-inventaire td {
+    position: relative;
+    overflow: hidden;
+}
+.tableau-corps-equipement td:not(:last-child)::after,
+.tableau-corps-inventaire td:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 10%;
+    bottom: 10%;
+    height: 80%;
+    width: 0.8px;
+    background-color: #d9c7a5;
+}
+.tableau-corps-equipement td:first-child,
+.tableau-corps-inventaire td:first-child {
+    border-left: 1px solid #d9c7a5;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.tableau-corps-equipement td:last-child,
+.tableau-corps-inventaire td:last-child {
+    border-right: 1px solid #d9c7a5;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.tableau-corps-equipement tbody tr:hover td,
+.tableau-corps-inventaire tbody tr:hover td {
+    background: #f3ead8;
+    transition: background 0.15s ease;
+}
+.tableau-equipement th:nth-child(1),
+.tableau-equipement td:nth-child(1),
+.tableau-inventaire th:nth-child(1),
+.tableau-inventaire td:nth-child(1) {
+    width: 60%;
+    text-align: left;
+}
+.tableau-equipement th:nth-child(2),
+.tableau-equipement td:nth-child(2),
+.tableau-inventaire th:nth-child(2),
+.tableau-inventaire td:nth-child(2) {
+    width: 15%;
+}
+.tableau-equipement th:nth-child(3),
+.tableau-equipement td:nth-child(3),
+.tableau-inventaire th:nth-child(3),
+.tableau-inventaire td:nth-child(3) {
+    width: 15%;
+    text-align: center;
+}
+.tableau-equipement th:nth-child(4),
+.tableau-equipement td:nth-child(4),
+.tableau-inventaire th:nth-child(4),
+.tableau-inventaire td:nth-child(4) {
+    width: 10%;
+    text-align: center;
+}
+.bouton-edition-equipement,
+.bouton-edition-inventaire {
+    position: relative;
+    top: -2px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #806b50;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.bouton-edition-equipement:hover,
+.bouton-edition-inventaire:hover {
+    background-color: #f3ead8;
+}
+.bouton-ajout-equipement,
+.bouton-ajout-inventaire {
+    border: none;
+    background: transparent;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    color: #806b50;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 2px;
+}
+.bouton-ajout-equipement:hover,
+.bouton-ajout-inventaire:hover {
+    color: #a98550;
+}
+.bouton-ordre-equipement,
+.bouton-ordre-inventaire {
+    background-color: transparent;
+    color: #806b50;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    font-family: Georgia, serif;
+}
+.bouton-ordre-equipement:hover,
+.bouton-ordre-inventaire:hover {
+    color: #a98550;
+    transform: scale(1.1);
+}
+.bouton-ordre-equipement.actif,
+.bouton-ordre-inventaire.actif {
+    color: #a98550;
+}
+.conteneur-nom-equipement {
+    display: flex;
+    align-items: center;
+    gap: 2mm;
+    width: 100%;
+    min-width: 0;
+}
+.case-equipe-equipement {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 3mm;
+    height: 3mm;
+    min-width: 3mm;
+    border: 1.5px solid #a98550;
+    border-radius: 50%;
+    background: #fffaf0;
+    cursor: pointer;
+    margin: 0;
+}
+.case-equipe-equipement:checked {
+    background-color: #b8860b;
+    box-shadow: inset 0 0 0 1px #b8860b;
+}
+.texte-nom-equipement {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #493c32;
+}
+/* ================================================== */
+/* MODE RÉORGANISATION & SUPPRESSION                  */
+/* ================================================== */
+.colonne-equipement-inventaire.mode-reorganisation {
+    gap: 0.1mm;
+    border: 0px dashed #4a78bd;
+    outline-offset: -1px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.colonne-equipement-inventaire.mode-reorganisation .conteneur-lignes-equipement,
+.colonne-equipement-inventaire.mode-reorganisation .conteneur-lignes-inventaire {
+    outline: 2px dashed #a98550;
+    outline-offset: -2px;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.colonne-equipement-inventaire.mode-reorganisation .ligne-equipement,
+.colonne-equipement-inventaire.mode-reorganisation .ligne-inventaire {
+    cursor: grab;
+    background-color: transparent;
+    transition: background-color 0.15s;
+}
+.colonne-equipement-inventaire.mode-reorganisation .ligne-equipement:hover td,
+.colonne-equipement-inventaire.mode-reorganisation .ligne-inventaire:hover td {
+    background-color: #eee2ca
+}
+.ligne-equipement,
+.ligne-inventaire {
+    cursor: default;
+}
+.colonne-equipement-inventaire.mode-reorganisation .ligne-equipement:active,
+.colonne-equipement-inventaire.mode-reorganisation .ligne-inventaire:active {
+    cursor: grabbing;
+}
+.colonne-equipement-inventaire.mode-reorganisation {
+    background: #f3ead8;
+    border-radius: 10px;
+}
+.ligne-en-deplacement .case-equipe-equipement {
+    margin-right: 1.5mm;
+}.zone-suppression-objets {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    min-height: 25px;
+    flex-shrink: 0;
+    padding: 2px 0;
+    font-size: 10px;
+    margin: 1.5px 0;
+    background-color: #f3e1d8;
+    color: #874b3b;
+    font-weight: bold;
+    box-sizing: border-box;
+    width: 100%;
+    border: 2px dashed #c99c8b;
+    border-radius: 10px;
+}
+.colonne-equipement-inventaire.mode-reorganisation .zone-suppression-objets {
+    display: flex;
+}
+.colonne-equipement-inventaire.mode-reorganisation
+.zone-suppression-objets.zone-suppression-active {
+    background-color: #e8cfc2;
+    border-color: #a66b58;
+    border-style: solid;
+}
+/* ============================================== */
+/* FENÊTRE DE CRÉATION / MODIFICATION D'UN OBJET   */
+/* ============================================== */
+
+#fenetre-objet {
+    width: 700px;
+    max-width: 900px;
+    max-height: 85vh;
+    padding: 4mm 2mm 2mm 2mm;
+    background: #f8f1e3;
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 12px;
+    font-family: Georgia, serif;
+    font-size: 9px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    box-shadow: 0 5px 20px rgba(73, 60, 50, 0.3);
+}
+
+#fenetre-objet::backdrop {
+    background: rgba(45, 42, 37, 0.45);
+}
+#titre-fenetre-objet {
+    margin: 0 0 3mm 0;
+    padding-bottom: 2mm;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: center;
+    border-bottom: 1px solid #c4ad85;
+}
+#fenetre-objet input,
+#fenetre-objet select,
+#fenetre-objet textarea {
+    padding: 2px 4px;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+}
+#fenetre-objet input:hover,
+#fenetre-objet select:hover,
+#fenetre-objet textarea:hover {
+    border-color: #a88e65;
+}
+
+#fenetre-objet input:focus,
+#fenetre-objet select:focus,
+#fenetre-objet textarea:focus {
+    outline: none;
+    border-color: #8b704b;
+    box-shadow: 0 0 3px rgba(139, 112, 75, 0.35);
+}
+#fenetre-objet button {
+    background: linear-gradient(145deg, #fffaf0, #e8dcc5);
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+#fenetre-objet button:hover {
+    background: linear-gradient(145deg, #fffdf7, #f3ead8);
+    border-color: #a88e65;
+}
+.formulaire-informations-objet {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 3mm 2mm;
+    align-items: center;
+}
+.champ-objet.champ-nom-objet {
+    grid-column: 1 / 7;
+    grid-row: 1;
+}
+.champ-objet.champ-poids-objet {
+    grid-column: 7 / 10;
+    grid-row: 1;
+}
+.champ-objet.champ-quantite-objet {
+    grid-column: 10 / 13;
+    grid-row: 1;
+}
+.champ-objet.champ-description-objet {
+    grid-column: 1 / 13;
+    grid-row: 2;
+}
+.champ-objet {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 2mm;
+    min-width: 0;
+}
+.champ-objet.champ-description-objet {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1mm;
+}
+#fenetre-objet textarea {
+    width: 100%;
+    min-height: 30mm;
+    box-sizing: border-box;
+    resize: vertical;
+}
+.champ-objet label {
+    font-family: Georgia, serif;
+    font-size: 9px;
+    font-weight: bold;
+    color: #66513b;
+    white-space: nowrap;
+}
+.champ-objet input,
+.champ-objet select {
+    width: 100%;
+    height: 14px;
+    min-width: 0;
+    box-sizing: border-box;
+}
+.champ-objet.champ-emplacement-objet {
+    margin-top: 3mm;
+}
+.boutons-formulaire-objet {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 3mm;
+    margin-top: 4mm;
+    padding-top: 2mm;
+    border-top: 1px solid #c4ad85;
+}
+#fenetre-objet button {
+    padding: 3px 8px;
+    min-width: 55px;
+}
+#bouton-valider-objet {
+    background: linear-gradient(145deg, #b89a68, #a98550);
+    color: #fffaf0;
+    border-color: #92703f;
+    font-weight: bold;
+}
+#bouton-valider-objet:hover {
+    background: linear-gradient(145deg, #c5a978, #b8955e);
+    border-color: #806137;
+}
+#bouton-annuler-objet {
+    background: linear-gradient(145deg, #eee2ca, #dfd0b5);
+    color: #493c32;
+    border-color: #c4ad85;
+}
+#bouton-annuler-objet:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a88e65;
+}
+
+
+
+/* ================================ */
+/* Zone Inférieure : Section Pièces */
+/* ================================ */
+
+.colonne-pieces {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 9cm;
+    width: 1.4cm;
+    gap: 0;
+    min-width: 0;
+    padding: 0;
+}
+
+/* Blocs des pièces */
+
+.bloc-piece {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0 0 1.5cm;
+    min-height: 0;
+    border: 1px solid #493c32;
+    border-radius: 10px;
+    padding: 0.5mm;
+    box-sizing: border-box;
+    margin: 0;
+    background: linear-gradient(145deg, #e8dfca, #c9b99b);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+
+/* Libellés des pièces */
+
+.bloc-piece label {
+    font-size: 11px;
+    font-weight: bold;
+    color: #493c32;
+    margin-bottom: 1mm;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Conteneur quantité et icône */
+.contenu-piece {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1mm;
+    width: 100%;
+    flex: 1;
+}
+
+/* Quantité */
+.contenu-piece input {
+    width: 65%;
+    min-width: 0;
+    height: 7mm;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #352b24;
+    border: none;
+    position: relative;
+    background: transparent;
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.contenu-piece input {
+    border-bottom: none;
+    position: relative;
+}
+
+.contenu-piece input {
+    background: linear-gradient(
+        to top,
+        transparent 0,
+        transparent 1mm,
+        rgba(73, 60, 50, 0.45) 1mm,
+        rgba(73, 60, 50, 0.45) calc(1mm + 1px),
+        transparent calc(1mm + 1px)
+    );
+}
+
+
+/* Icônes */
+.contenu-piece img {
+    width: 4.5mm;
+    height: 4.5mm;
+    object-fit: contain;
+}
+
+
+/* Suppression des flèches sur Chrome, Edge et autres navigateurs WebKit */
+.contenu-piece input::-webkit-inner-spin-button,
+.contenu-piece input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Couleurs des différents métaux */
+
+.piece-cobalt {
+    background: linear-gradient(145deg, #cdf4f7, #678cb6);
+}
+
+
+.piece-platine {
+    background: linear-gradient(145deg, #e8e8e8, #bfc5cc);
+}
+
+.piece-or {
+    background: linear-gradient(145deg, #f5e6a8, #d6b75c);
+}
+
+.piece-argent {
+    background: linear-gradient(145deg, #eeeeee, #c4cbd1);
+}
+
+.piece-cuivre {
+    background: linear-gradient(145deg, #e8c0a0, #bd7950);
+}
+
+/* Apparence du champ lorsqu'il est sélectionné */
+.contenu-piece input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+    color: inherit;
+    box-shadow: 0 0 0 1px rgba(73, 60, 50, 0.35);
+}
+
+/* Couleur de sélection selon le métal */
+
+.piece-cobalt .contenu-piece input::selection {
+    background-color: #678cb6;
+    color: #ffffff;
+}
+
+.piece-platine .contenu-piece input::selection {
+    background-color: #bfc5cc;
+    color: #352b24;
+}
+
+.piece-or .contenu-piece input::selection {
+    background-color: #d6b75c;
+    color: #352b24;
+}
+
+.piece-argent .contenu-piece input::selection {
+    background-color: #c4cbd1;
+    color: #352b24;
+}
+
+.piece-cuivre .contenu-piece input::selection {
+    background-color: #bd7950;
+    color: #ffffff;
+}
+
+/* Couleur du texte selon le métal */
+.piece-cobalt .contenu-piece input {
+    color: #294b70;
+}
+
+.piece-platine .contenu-piece input {
+    color: #494f57;
+}
+
+.piece-or .contenu-piece input {
+    color: #765b16;
+}
+
+.piece-argent .contenu-piece input {
+    color: #505a63;
+}
+
+.piece-cuivre .contenu-piece input {
+    color: #713d25;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Colonne Traits et Essences */
+
+.colonne-traits-essences {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1mm;
+    min-width: 0;
+    height: 9cm;
+}
+
+
+/* ================================================== */
+/* SECTION TRAITS                                     */
+/* ================================================== */
+
+/* 1. STRUCTURE GÉNÉRALE */
+
+.colonne-traits {
+    display: flex;
+    flex-direction: column;
+    height: 9cm;
+    min-width: 0;
+    box-sizing: border-box;
+    font-family: Georgia, serif;
+    color: #493c32;
+}
+
+/* Structure des tableaux Traits */
+
+.tableau-traits {
+    width: 100%;
+    table-layout: fixed;
+    font-family: Georgia, serif;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* Texte des en-têtes */
+
+.tableau-traits th {
+    font-size: 10px;
+}
+
+/* Texte du corps */
+
+.tableau-corps-traits td {
+    font-size: 9px;
+}
+
+.colonne-traits > .tableau-traits {
+    margin-right: 2mm;
+}
+
+/* Bordures de l'en-tête */
+
+.tableau-traits th {
+    border-top: 1px solid #c4ad85;
+    border-bottom: 1px solid #c4ad85;
+    padding: 1mm;
+    text-align: center;
+    background: #DFD0B2
+}
+
+.tableau-traits th:first-child {
+    border-left: 1px solid #c4ad85;
+    border-top-left-radius: 10px;
+    text-align: left;
+    padding-left: 2mm;
+}
+
+.bouton-ajout-trait {
+    margin-right: 1.5mm;
+}
+
+.tableau-traits th:last-child {
+    border-right: 1px solid #c4ad85;
+    border-top-right-radius: 10px;
+    padding-right: 0;
+    text-align: center;
+}
+
+/* Bordures du corps */
+
+/* Espacement entre les lignes */
+
+.tableau-corps-traits {
+    border-collapse: separate;
+    border-spacing: 0 0.5mm;
+}
+
+/* Cellules du corps */
+
+.tableau-corps-traits td:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.tableau-corps-traits td:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.tableau-corps-traits td {
+    position: relative;
+    border-top: 1px solid #c4ad85;
+    border-bottom: 1px solid #c4ad85;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    background: #f8f1e3;
+}
+
+/* Bordures extérieures */
+
+.tableau-corps-traits td:first-child {
+    border-left: 1px solid #c4ad85;
+}
+
+.tableau-corps-traits td:last-child {
+    border-right: 1px solid #c4ad85;
+}
+
+/* Séparations verticales internes */
+
+.tableau-corps-traits td:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 10%;
+    bottom: 10%;
+    height: 80%;
+    width: 0.8px;
+    background-color: #c4ad85;
+}
+
+/* Conteneur défilant intérieur */
+
+.conteneur-lignes-traits {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: #b49a70 transparent;
+    box-sizing: border-box;
+    padding: 0.5mm 0.2mm 0.5mm 1mm;
+}
+
+/* Cadre extérieur du tableau */
+
+.cadre-lignes-traits {
+    flex: 1 1 0;
+    min-height: 0;
+    overflow: hidden;
+    border-bottom: 1px solid #c4ad85;
+    border-left: 1px solid #c4ad85;
+    border-right: 1px solid #c4ad85;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-sizing: border-box;
+    background: #f8f1e3;
+}
+
+/* ================================================== */
+/* BOUTONS TRAITS                                     */
+/* ================================================== */
+
+/* Boutons d'édition */
+
+.bouton-edition-trait {
+    position: relative;
+    top: -2px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #493c32;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.bouton-edition-trait:hover {
+    background-color: #eee2ca;
+}
+
+/* Bouton d'ajout */
+
+.bouton-ajout-trait {
+    border: none;
+    background: transparent;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    color: #806b50;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 2px;
+}
+
+
+.bouton-ajout-trait:hover {
+    color: #a98550;
+}
+
+/* Bouton de réorganisation */
+
+.bouton-reorganisation-traits {
+    background-color: transparent;
+    color: #493c32;
+    border: none;
+    cursor: pointer;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    position: relative;
+    left: -10px;
+}
+
+.bouton-reorganisation-traits:hover {
+    color: #a98550;
+    transform: scale(1.1);
+}
+
+/* Bouton actif */
+
+.bouton-reorganisation-traits.actif {
+    color: #a98550;
+}
+
+/* ================================================== */
+/* MODE RÉORGANISATION DES TRAITS                     */
+/* ================================================== */
+
+/* Apparence générale de la colonne */
+
+.colonne-traits.mode-reorganisation {
+    border: 0px dashed #a98550;
+    border-radius: 10px;
+}
+
+/* Cadre du tableau en mode réorganisation */
+
+.colonne-traits.mode-reorganisation .cadre-lignes-traits {
+    border-top: 1px solid #c4ad85;
+    border-bottom: 1px solid #c4ad85;
+    border-left: 1px solid #c4ad85;
+    border-right: 1px solid #c4ad85;
+    outline: 2px dashed #a98550;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    outline-offset: -3px;
+}
+
+/* Curseur des lignes */
+
+.ligne-trait {
+    cursor: default;
+}
+
+/* Survol des lignes */
+
+.colonne-traits.mode-reorganisation .ligne-trait:hover td {
+    background-color: #eee2ca;
+}
+
+.colonne-traits.mode-reorganisation .ligne-trait:hover {
+    outline: 1px solid #a98550;
+}
+
+/* Déplacement des lignes */
+
+.colonne-traits.mode-reorganisation .ligne-trait:active {
+    cursor: grabbing;
+}
+
+/* Apparence de la ligne déplacée */
+
+.colonne-traits .ligne-trait.trait-en-deplacement {
+    opacity: 0.8;
+}
+
+/* ================================================== */
+/* ZONE DE SUPPRESSION DES TRAITS                     */
+/* ================================================== */
+
+/* Apparence de la zone */
+
+.zone-suppression-traits {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    min-height: 25px;
+    flex-shrink: 0;
+    padding: 2px 0;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    margin: 1.5px 0;
+    background-color: #f3e1d8;
+    color: #874b3b;
+    font-weight: bold;
+    box-sizing: border-box;
+    width: 100%;
+    border: 2px dashed #c99c8b;
+    border-radius: 10px;
+}
+
+/* Affichage en mode réorganisation */
+
+.colonne-traits.mode-reorganisation .zone-suppression-traits {
+    display: flex;
+}
+
+/* Survol actif de la zone de suppression */
+
+.colonne-traits.mode-reorganisation .zone-suppression-active {
+    background-color: #e8cfc2;
+    border-color: #a66b58;
+    border-style: solid;
+}
+
+.colonne-traits.mode-reorganisation {
+    background: #f3ead8;
+    border-radius: 10px;
+}
+
+
+/* ============================================== */
+/* FENÊTRE DE CRÉATION / MODIFICATION DES TRAITS  */
+/* ============================================== */
+
+#fenetre-trait {
+    width: 700px;
+    max-width: 900px;
+    max-height: 85vh;
+    padding: 4mm 2mm 2mm 2mm;
+    background: #f8f1e3;
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 12px;
+    font-family: Georgia, serif;
+    font-size: 9px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    box-shadow: 0 5px 20px rgba(73, 60, 50, 0.3);
+}
+
+#fenetre-trait::backdrop {
+    background: rgba(45, 42, 37, 0.45);
+}
+
+/* Titre */
+
+#titre-fenetre-trait {
+    margin: 0 0 3mm 0;
+    padding-bottom: 2mm;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: center;
+    border-bottom: 1px solid #c4ad85;
+}
+
+/* Champs de saisie */
+
+#fenetre-trait input,
+#fenetre-trait textarea {
+    padding: 2px 4px;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+}
+
+#fenetre-trait input:hover,
+#fenetre-trait textarea:hover {
+    border-color: #a88e65;
+}
+
+#fenetre-trait input:focus,
+#fenetre-trait textarea:focus {
+    outline: none;
+    border-color: #8b704b;
+    box-shadow: 0 0 3px rgba(139, 112, 75, 0.35);
+}
+
+/* Libellés */
+
+#fenetre-trait label {
+    display: block;
+    margin: 2mm 0 1mm 0;
+    font-family: Georgia, serif;
+    font-size: 9px;
+    font-weight: bold;
+    color: #66513b;
+}
+
+/* Champ Nom */
+
+#nom-trait {
+    width: 100%;
+    height: 14px;
+    box-sizing: border-box;
+}
+
+/* Champ Description */
+
+#description-trait {
+    display: block;
+    width: 100%;
+    min-height: 30mm;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Boutons */
+
+#fenetre-trait button {
+    padding: 3px 8px;
+    min-width: 55px;
+    background: linear-gradient(145deg, #fffaf0, #e8dcc5);
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+#fenetre-trait button:hover {
+    background: linear-gradient(145deg, #fffdf7, #f3ead8);
+    border-color: #a88e65;
+}
+
+/* Organisation des boutons */
+
+.boutons-fenetre-trait {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 3mm;
+    margin-top: 4mm;
+    padding-top: 2mm;
+    border-top: 1px solid #c4ad85;
+}
+
+/* Bouton Valider */
+
+#bouton-valider-trait {
+    background: linear-gradient(145deg, #b89a68, #a98550);
+    color: #fffaf0;
+    border-color: #92703f;
+    font-weight: bold;
+}
+
+#bouton-valider-trait:hover {
+    background: linear-gradient(145deg, #c5a978, #b8955e);
+    border-color: #806137;
+}
+
+/* Bouton Annuler */
+
+#bouton-annuler-trait {
+    background: linear-gradient(145deg, #eee2ca, #dfd0b5);
+    color: #493c32;
+    border-color: #c4ad85;
+}
+
+#bouton-annuler-trait:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a88e65;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================================== */
+/* SECTION ESSENCES                                   */
+/* ================================================== */
+
+/* 1. STRUCTURE GÉNÉRALE */
+
+.colonne-essences {
+    display: flex;
+    flex-direction: column;
+    height: 9cm;
+    min-width: 0;
+    box-sizing: border-box;
+    font-family: Georgia, serif;
+    color: #493c32;
+}
+
+/* Structure des tableaux Essences */
+
+.tableau-essences {
+    width: 100%;
+    table-layout: fixed;
+    font-family: Georgia, serif;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* Texte des en-têtes */
+
+.tableau-essences th {
+    font-size: 10px;
+}
+
+/* Texte du corps */
+
+.tableau-corps-essences td {
+    font-size: 9px;
+}
+
+.colonne-essences > .tableau-essences {
+    margin-right: 1.5mm;
+}
+
+/* Bordures de l'en-tête */
+
+.tableau-essences th {
+    border-top: 1px solid #c4ad85;
+    border-bottom: 1px solid #c4ad85;
+    padding: 1mm;
+    text-align: center;
+    background: #DFD0B2;
+}
+
+.tableau-essences th:first-child {
+    border-left: 1px solid #c4ad85;
+    border-top-left-radius: 10px;
+    text-align: left;
+    padding-left: 1.5mm;
+}
+
+.bouton-ajout-essences {
+    margin-right: 1.5mm;
+}
+
+.tableau-essences th:last-child {
+    border-right: 1px solid #c4ad85;
+    border-top-right-radius: 10px;
+    padding-right: 0;
+    text-align: center;
+}
+
+/* ================================================== */
+/* BORDURES DU CORPS                                  */
+/* ================================================== */
+
+/* Espacement entre les lignes */
+
+.tableau-corps-essences {
+    border-collapse: separate;
+    border-spacing: 0 0.5mm;
+}
+
+/* Cellules du corps */
+
+.tableau-corps-essences td:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.tableau-corps-essences td:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.tableau-corps-essences td {
+    position: relative;
+    border-top: 1px solid #c4ad85;
+    border-bottom: 1px solid #c4ad85;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    background: #f8f1e3;
+}
+
+/* Bordures extérieures */
+
+.tableau-corps-essences td:first-child {
+    border-left: 1px solid #c4ad85;
+}
+
+.tableau-corps-essences td:last-child {
+    border-right: 1px solid #c4ad85;
+}
+
+/* Séparations verticales internes */
+
+.tableau-corps-essences td:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 10%;
+    bottom: 10%;
+    height: 80%;
+    width: 0.8px;
+    background-color: #c4ad85;
+}
+
+/* Conteneur défilant intérieur */
+
+.conteneur-lignes-essences {
+    width: 100%;
+    flex: 1 1 0;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: #b49a70 transparent;
+    box-sizing: border-box;
+    padding: 0.5mm 0.2mm 0.5mm 1mm;
+}
+
+/* Cadre extérieur du tableau */
+
+.cadre-lignes-essences {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-height: 0;
+    overflow: hidden;
+    border-bottom: 1px solid #c4ad85;
+    border-left: 1px solid #c4ad85;
+    border-right: 1px solid #c4ad85;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-sizing: border-box;
+    background: #f8f1e3;
+}
+
+/* ================================================== */
+/* BOUTONS ESSENCES                                   */
+/* ================================================== */
+
+/* Boutons d'édition */
+
+.bouton-edition-essence {
+    position: relative;
+    top: -2px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #493c32;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.bouton-edition-essence:hover {
+    background-color: #eee2ca;
+}
+
+/* Bouton d'ajout */
+
+.bouton-ajout-essence {
+    border: none;
+    background: transparent;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    color: #806b50;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 2px;
+}
+
+.bouton-ajout-essence:hover {
+    color: #a98550;
+}
+
+/* Bouton de réorganisation */
+
+.bouton-reorganisation-essences {
+    background-color: transparent;
+    color: #493c32;
+    border: none;
+    cursor: pointer;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    position: relative;
+    left: -10px;
+}
+
+.bouton-reorganisation-essences:hover {
+    color: #a98550;
+    transform: scale(1.1);
+}
+
+/* Bouton actif */
+
+.bouton-reorganisation-essences.actif {
+    color: #a98550;
+}
+
+/* ================================================== */
+/* MODE RÉORGANISATION DES ESSENCES                   */
+/* ================================================== */
+
+/* Apparence générale de la colonne */
+
+.colonne-essences.mode-reorganisation {
+    border: 0px dashed #a98550;
+    border-radius: 10px;
+    background: #f3ead8;
+}
+
+/* Cadre du tableau en mode réorganisation */
+
+.colonne-essences.mode-reorganisation .cadre-lignes-essences {
+    border-top: 1px solid #c4ad85;
+    border-bottom: 1px solid #c4ad85;
+    border-left: 1px solid #c4ad85;
+    border-right: 1px solid #c4ad85;
+    outline: 2px dashed #a98550;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    outline-offset: -3px;
+}
+
+/* Curseur des lignes */
+
+.ligne-essence {
+    cursor: default;
+}
+
+/* Survol des lignes */
+
+.colonne-essences.mode-reorganisation .ligne-essence:hover td {
+    background-color: #eee2ca;
+}
+
+.colonne-essences.mode-reorganisation .ligne-essence:hover {
+    outline: 1px solid #a98550;
+}
+
+/* Déplacement des lignes */
+
+.colonne-essences.mode-reorganisation .ligne-essence:active {
+    cursor: grabbing;
+}
+
+/* Apparence de la ligne déplacée */
+
+.colonne-essences .ligne-essence.essence-en-deplacement {
+    opacity: 0.8;
+}
+
+/* ================================================== */
+/* ZONE DE SUPPRESSION DES ESSENCES                   */
+/* ================================================== */
+
+/* Apparence de la zone */
+
+.zone-suppression-essences {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    min-height: 25px;
+    flex-shrink: 0;
+    padding: 2px 0;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    margin: 1.5px 0;
+    background-color: #f3e1d8;
+    color: #874b3b;
+    font-weight: bold;
+    box-sizing: border-box;
+    width: 100%;
+    border: 2px dashed #c99c8b;
+    border-radius: 10px;
+}
+
+/* Affichage en mode réorganisation */
+
+.colonne-essences.mode-reorganisation .zone-suppression-essences {
+    display: flex;
+}
+
+/* Survol actif de la zone de suppression */
+
+.colonne-essences.mode-reorganisation .zone-suppression-active {
+    background-color: #e8cfc2;
+    border-color: #a66b58;
+    border-style: solid;
+}
+
+/* ================================================== */
+/* COMPTEUR DES ESSENCES                              */
+/* ================================================== */
+
+.compteur-essences {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1mm;
+    padding: 1mm 2mm 0.5mm 0;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color: #66513b;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================================================ */
+/* FENÊTRE DE CRÉATION / MODIFICATION DES ESSENCES  */
+/* ================================================ */
+
+#fenetre-essence {
+    width: 700px;
+    max-width: 900px;
+    max-height: 85vh;
+    padding: 4mm 2mm 2mm 2mm;
+    background: #f8f1e3;
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 12px;
+    font-family: Georgia, serif;
+    font-size: 9px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    box-shadow: 0 5px 20px rgba(73, 60, 50, 0.3);
+}
+
+#fenetre-essence::backdrop {
+    background: rgba(45, 42, 37, 0.45);
+}
+
+/* Titre */
+
+#titre-fenetre-essence {
+    margin: 0 0 3mm 0;
+    padding-bottom: 2mm;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #493c32;
+    text-align: center;
+    border-bottom: 1px solid #c4ad85;
+}
+
+/* Champs de saisie */
+
+#fenetre-essence input,
+#fenetre-essence textarea {
+    padding: 2px 4px;
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+}
+
+#fenetre-essence input:hover,
+#fenetre-essence textarea:hover {
+    border-color: #a88e65;
+}
+
+#fenetre-essence input:focus,
+#fenetre-essence textarea:focus {
+    outline: none;
+    border-color: #8b704b;
+    box-shadow: 0 0 3px rgba(139, 112, 75, 0.35);
+}
+
+/* Libellés */
+
+#fenetre-essence label {
+    display: block;
+    margin: 2mm 0 1mm 0;
+    font-family: Georgia, serif;
+    font-size: 9px;
+    font-weight: bold;
+    color: #66513b;
+}
+
+/* Champ Nom */
+
+#nom-essence {
+    width: 100%;
+    height: 14px;
+    box-sizing: border-box;
+}
+
+/* Champ Description */
+
+#description-essence {
+    display: block;
+    width: 100%;
+    min-height: 30mm;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Boutons */
+
+#fenetre-essence button {
+    padding: 3px 8px;
+    min-width: 55px;
+    background: linear-gradient(145deg, #fffaf0, #e8dcc5);
+    color: #493c32;
+    border: 1px solid #c4ad85;
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+#fenetre-essence button:hover {
+    background: linear-gradient(145deg, #fffdf7, #f3ead8);
+    border-color: #a88e65;
+}
+
+/* Organisation des boutons */
+
+.boutons-fenetre-essence {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 3mm;
+    margin-top: 4mm;
+    padding-top: 2mm;
+    border-top: 1px solid #c4ad85;
+}
+
+/* Bouton Valider */
+
+#bouton-valider-essence {
+    background: linear-gradient(145deg, #b89a68, #a98550);
+    color: #fffaf0;
+    border-color: #92703f;
+    font-weight: bold;
+}
+
+#bouton-valider-essence:hover {
+    background: linear-gradient(145deg, #c5a978, #b8955e);
+    border-color: #806137;
+}
+
+/* Bouton Annuler */
+
+#bouton-annuler-essence {
+    background: linear-gradient(145deg, #eee2ca, #dfd0b5);
+    color: #493c32;
+    border-color: #c4ad85;
+}
+
+#bouton-annuler-essence:hover {
+    background: linear-gradient(145deg, #fffaf0, #eee2ca);
+    border-color: #a88e65;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   BOUTON FLOTTANT DU CHAT
+===================================================== */
+
+#bouton-chat {
+    position: fixed;
+    bottom: 45px;
+    left: calc(50% + 10.5cm + 15px);
+    width: 60px;
+    height: 60px;
+    z-index: 10000;
+    cursor: pointer;
+}
+
+#icone-porte-chat {
+    width: 150%;
+    height: 150%;
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   FENÊTRE DU CHAT
+===================================================== */
+
+#fenetre-chat {
+    display: none;
+    position: fixed;
+    bottom: 110px;
+    left: calc(50.5% + 10.5cm + 15px);
+    width: 320px;
+    height: 85vh;
+    box-sizing: border-box;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+/* En-tête du chat */
+
+#entete-chat {
+    height: 35px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background-color: #333333;
+    color: white;
+    font-family: Calibri, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Bouton de fermeture du chat */
+
+#entete-chat {
+    justify-content: space-between;
+}
+
+#fermer-chat {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+#fermer-chat:hover {
+    color: #ff9999;
+}
+
+/* =====================================================
+   AIDE AUX JETS DE DÉS
+===================================================== */
+
+#aide-roll {
+    margin: 10px;
+    padding: 12px;
+    border: 1px solid #c9b99f;
+    border-radius: 8px;
+    background-color: #f7f2e9;
+    color: #59452b;
+    font-family: Calibri, sans-serif;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.titre-aide-roll {
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #59452b;
+}
+
+#aide-roll p {
+    margin: 0 0 8px 0;
+}
+
+.exemple-roll {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 7px;
+    margin-top: 4px;
+    border-radius: 4px;
+    background-color: #eee5d5;
+}
+
+.exemple-roll span {
+    font-family: monospace;
+    font-weight: bold;
+    color: #805b2d;
+}
+
+.exemple-roll small {
+    color: #6d6253;
+    text-align: right;
+}
+
+/* Historique des messages */
+
+#historique-chat {
+    flex: 1;
+    min-height: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: Calibri, sans-serif;
+    font-size: 14px;
+}
+
+/* Zone de saisie du chat */
+
+#zone-saisie-chat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    padding: 8px;
+    box-sizing: border-box;
+    border-top: 1px solid #cccccc;
+    background-color: #f2f2f2;
+    flex-shrink: 0;
+}
+
+#saisie-chat {
+    flex: 1;
+    min-width: 0;
+    height: 32px;
+    padding: 0 8px;
+    box-sizing: border-box;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    outline: none;
+    font-family: Calibri, sans-serif;
+    font-size: 14px;
+}
+
+/* =====================================================
+   ZONE DE SAISIE /ROLL
+===================================================== */
+
+#conteneur-saisie-roll {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    height: 32px;
+    align-items: center;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+}
+
+/* Préfixe /roll */
+
+#prefixe-roll {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    background-color: #eee5d5;
+    border-right: 1px solid #d6c4a5;
+    color: #68451f;
+    font-family: monospace;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Champ de saisie */
+
+#conteneur-saisie-roll #saisie-chat {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0 8px;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    outline: none;
+}
+
+
+
+
+#envoyer-chat {
+    height: 32px;
+    padding: 0 10px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    background-color: #333333;
+    color: white;
+    font-family: Calibri, sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* Messages du chat */
+
+.message-chat {
+    max-width: 85%;
+    padding: 7px 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    overflow-wrap: break-word;
+}
+
+/* Commandes du joueur */
+
+.message-commande {
+    align-self: flex-end;
+    background-color: #eee5d5;
+    color: #59452b;
+    border: 1px solid #d6c4a5;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+/* Résultats des jets de dés */
+
+.message-resultat {
+    align-self: flex-start;
+    background-color: #e8e8e8;
+    color: #222222;
+    border: 1px solid #cccccc;
+    font-weight: bold;
+}
+
+
+/* ==================================== */
+/* Affichage des résultats de dés       */
+/* ==================================== */
+
+.contenu-resultat-des {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 0;
+}
+
+/* En-tête des messages */
+
+.entete-message-chat {
+    margin-bottom: 4px;
+    font-family: Calibri, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #777777;
+}
+
+/* Hexagones des dés individuels */
+
+.hexagone-resultat {
+    width: 54px;
+    height: 50px;
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    background-color: #F8F1E3;
+    color: #66513B;
+
+    clip-path: polygon(
+        25% 0%,
+        75% 0%,
+        100% 50%,
+        75% 100%,
+        25% 100%,
+        0% 50%
+    );
+
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.4));
+}
+
+.hexagone-resultat::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-color: #D9B978;
+
+    clip-path: polygon(
+        25% 0%,
+        75% 0%,
+        100% 50%,
+        75% 100%,
+        25% 100%,
+        0% 50%
+    );
+
+    z-index: -1;
+}
+
+/* Modificateur du jet */
+
+.modificateur-resultat {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    font-weight: bold;
+    color: #000000;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+/* Signe égal */
+
+.egal-resultat {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    font-weight: bold;
+    color: #000000;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+/* Score final */
+
+.total-final-resultat {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    font-weight: bold;
+    color: #000000;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================= */
+/* FENÊTRE DE JET DE DÉS                    */
+/* ========================================= */
+
+#fenetre-jet-des {
+    width: 340px;
+    padding: 0;
+    border: 1px solid #a98550;
+    border-radius: 8px;
+    background-color: #f5eee2;
+    color: #493c32;
+    font-family: Georgia, serif;
+}
+
+#fenetre-jet-des::backdrop {
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.entete-fenetre-jet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #493c32;
+    color: #f5eee2;
+}
+
+.entete-fenetre-jet h3 {
+    margin: 0;
+    font-size: 17px;
+}
+
+#fermer-fenetre-jet {
+    border: none;
+    background: none;
+    color: inherit;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.contenu-fenetre-jet {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px;
+}
+
+.modes-jet {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.modes-jet button {
+    padding: 7px 9px;
+    border: 1px solid #a98550;
+    border-radius: 4px;
+    background-color: #fffaf2;
+    color: #493c32;
+    cursor: pointer;
+    font-family: Georgia, serif;
+}
+
+.modes-jet button:hover {
+    background-color: #e8d8bd;
+}
+
+.modes-jet button.mode-jet-actif {
+    background-color: #a98550;
+    color: white;
+}
+
+.resume-jet {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#bouton-lancer-jet {
+    padding: 10px;
+    border: 1px solid #493c32;
+    border-radius: 4px;
+    background-color: #493c32;
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#resultat-jet {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
