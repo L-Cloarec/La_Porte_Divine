@@ -9,6 +9,8 @@ Version 3 : https://l-cloarec.github.io/La_Porte_Divine/Version_3/ (version à j
 
 Version 4 : https://l-cloarec.github.io/La_Porte_Divine/Version_4/ (version à jour du 25/11/2026)
 
+Version 5 : https://l-cloarec.github.io/La_Porte_Divine/Version_5/ (version à jour du 26/11/2026) : 1ère Version utilisable (Mais Livre de règles associé pas encore à jour)
+
 Les règles pour la Porte Divine sont présentes dans le dossier "Instructions_La_Porte_Divine"
 
 
